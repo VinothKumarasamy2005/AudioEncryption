@@ -1,0 +1,45 @@
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27723:5: warning: Added loop label VITIS_LOOP_19_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 16 / 4; i++) {
+    ^~~
+    VITIS_LOOP_19_1: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27723:5: note: FIX-IT applied suggested code changes
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27744:5: warning: Added loop label VITIS_LOOP_40_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 16; i++) {
+    ^~~
+    VITIS_LOOP_40_1: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27744:5: note: FIX-IT applied suggested code changes
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27748:5: warning: Added loop label VITIS_LOOP_44_2:   [xilinx-label-all-loops]
+    for (int step = 16; step > 1; step /= 2) {
+    ^~~
+    VITIS_LOOP_44_2: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27748:5: note: FIX-IT applied suggested code changes
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27750:9: warning: Added loop label VITIS_LOOP_46_3:   [xilinx-label-all-loops]
+        for (int i = 0; i < step / 2; i++) {
+        ^~~
+        VITIS_LOOP_46_3: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27750:9: note: FIX-IT applied suggested code changes
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27754:9: warning: Added loop label VITIS_LOOP_50_4:   [xilinx-label-all-loops]
+        for (int i = 0; i < step; i++) {
+        ^~~
+        VITIS_LOOP_50_4: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27754:9: note: FIX-IT applied suggested code changes
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27768:9: warning: Added loop label VITIS_LOOP_64_1:   [xilinx-label-all-loops]
+        for (int i = 0, j = m - 1; i < m; i++, j--) {
+        ^~~
+        VITIS_LOOP_64_1: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27768:9: note: FIX-IT applied suggested code changes
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27776:9: warning: Added loop label VITIS_LOOP_72_2:   [xilinx-label-all-loops]
+        for (int i = 0; i < half; i++) {
+        ^~~
+        VITIS_LOOP_72_2: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27776:9: note: FIX-IT applied suggested code changes
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27781:9: warning: Added loop label VITIS_LOOP_77_3:   [xilinx-label-all-loops]
+        for (int i = half; i < m; i++) {
+        ^~~
+        VITIS_LOOP_77_3: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27781:9: note: FIX-IT applied suggested code changes
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27790:5: warning: Added loop label VITIS_LOOP_86_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 16; i++) {
+    ^~~
+    VITIS_LOOP_86_1: 
+C:\Windows\vitiS\encrymodify\solution1\.autopilot\db\encryfinal.pp.0.cpp:27790:5: note: FIX-IT applied suggested code changes

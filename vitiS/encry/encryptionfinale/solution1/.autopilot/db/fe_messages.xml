@@ -1,0 +1,15 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Windows/vitiS/encry/encryptionfinale/solution1/csynth.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="encryfinal" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=encryfinal" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="encryptionfinale/chaotic_encrypt.cpp:93:0" msg_body="Inlining function 'haarDWT4(int const*, double*)' into 'encryfinal(int const*, double*)'">
+        <args Callee="haarDWT4(int const*, double*)" Callee-DebugLoc="File encryptionfinale/chaotic_encrypt.cpp Line 39 Column 0" Caller="encryfinal(int const*, double*)" Caller-DebugLoc="File encryptionfinale/chaotic_encrypt.cpp Line 93 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="encryptionfinale/chaotic_encrypt.cpp:93:0" msg_body="Inlining function 'multiplySignals(double const*, double const*, double*)' into 'encryfinal(int const*, double*)'">
+        <args Callee="multiplySignals(double const*, double const*, double*)" Callee-DebugLoc="File encryptionfinale/chaotic_encrypt.cpp Line 85 Column 0" Caller="encryfinal(int const*, double*)" Caller-DebugLoc="File encryptionfinale/chaotic_encrypt.cpp Line 93 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="encryptionfinale/chaotic_encrypt.cpp:93:0" msg_body="Inlining function 'chaoticPermutation(double const*, double*, double*)' into 'encryfinal(int const*, double*)'">
+        <args Callee="chaoticPermutation(double const*, double*, double*)" Callee-DebugLoc="File encryptionfinale/chaotic_encrypt.cpp Line 58 Column 0" Caller="encryfinal(int const*, double*)" Caller-DebugLoc="File encryptionfinale/chaotic_encrypt.cpp Line 93 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

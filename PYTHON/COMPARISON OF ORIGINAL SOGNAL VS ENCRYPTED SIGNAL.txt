@@ -1,0 +1,130 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.io.wavfile as wav
+import pywt  # For Haar DWT
+
+# ---------------------------------------------------------------------------------
+# Load Speech Signal
+def load_audio(filename):
+    try:
+        rate, data = wav.read(filename)
+        if data.ndim > 1:
+            data = data[:, 0]  # Take one channel if stereo
+        return rate, data.astype(float) / np.max(np.abs(data))  # Normalize
+    except Exception as e:
+        print("Error loading audio file:", e)
+        return None, None
+
+# ---------------------------------------------------------------------------------
+# Chen's Hyperchaotic System (Fixed)
+def generate_chen_chaos(length, dt=0.01):
+    alpha, sigma, gamm, beta, epsilon = 36.0, 16.0, 28.0, 3.0, 0.2
+    x, y, z, w = 0.1, 0.1, 0.1, 0.1  # Initial non-zero values
+    chaos_seq = np.zeros(length)
+    
+    for i in range(length):
+        dx = alpha * (y - x)
+        dy = sigma * x - x * z + gamm * y - w
+        dz = x * y - beta * z
+        dw = x - epsilon
+
+        x += dx * dt
+        y += dy * dt
+        z += dz * dt
+        w += dw * dt
+        
+        # Prevent NaN or Inf values
+        if np.isnan(x) or np.isinf(x): x = 0.1
+        if np.isnan(y) or np.isinf(y): y = 0.1
+        if np.isnan(z) or np.isinf(z): z = 0.1
+        if np.isnan(w) or np.isinf(w): w = 0.1
+
+        chaos_seq[i] = x
+    
+    max_val = np.max(np.abs(chaos_seq))
+    if max_val > 0:
+        chaos_seq /= max_val
+
+    return chaos_seq
+
+# ---------------------------------------------------------------------------------
+# Haar Discrete Wavelet Transform (DWT)
+def haar_dwt(signal):
+    coeffs = pywt.wavedec(signal, 'haar', level=1)
+    dwt_signal = np.concatenate(coeffs)
+    return np.nan_to_num(dwt_signal)  # Replace NaN values
+
+# ---------------------------------------------------------------------------------
+# Chaotic Permutation
+def chaotic_permutation(signal, chaos_seq):
+    permuted_signal = np.zeros_like(signal)
+    if chaos_seq[0] > 0:
+        permuted_signal[:] = signal[::-1]  # Full reverse
+    else:
+        half = len(signal) // 2
+        permuted_signal[:half] = signal[half-1::-1]  # Reverse first half
+        permuted_signal[half:] = signal[:half-1:-1]  # Reverse second half
+    return permuted_signal
+
+# ---------------------------------------------------------------------------------
+# Encryption Function (Fixed)
+def encrypt_speech(signal):
+    if len(signal) == 0:
+        print("Error: Empty input signal!")
+        return np.array([])  # Return empty array
+    
+    dwt_signal = haar_dwt(signal)
+    chaos_seq = generate_chen_chaos(len(dwt_signal))
+
+    # Ensure equal length before multiplication
+    if len(dwt_signal) == len(chaos_seq):
+        multiplied_signal = dwt_signal * chaos_seq
+        encrypted_signal = chaotic_permutation(multiplied_signal, chaos_seq)
+    else:
+        print("Error: Length mismatch between signals!")
+        return np.array([])
+
+    # Normalize encrypted signal
+    max_val = np.max(np.abs(encrypted_signal))
+    if max_val > 0:
+        encrypted_signal /= max_val  
+
+    return encrypted_signal
+
+# ---------------------------------------------------------------------------------
+# Plot Amplitude Distributions
+def plot_distributions(original, encrypted):
+    plt.figure(figsize=(10, 4))
+
+    # Original Speech Signal
+    plt.subplot(1, 2, 1)
+    plt.plot(original, color='b')
+    plt.title('(a) Original Signal')
+    plt.xlabel('Sample Index')
+    plt.ylabel('Amplitude')
+
+    # Encrypted Speech Signal
+    plt.subplot(1, 2, 2)
+    plt.plot(encrypted, color='r')
+    plt.title('(b) Encrypted Signal')
+    plt.xlabel('Sample Index')
+
+    plt.suptitle('Figure: Proposed Cryptosystem - Speech Signal Encryption')
+    plt.tight_layout()
+    plt.show()
+
+# ---------------------------------------------------------------------------------
+# Run the Analysis
+filename = r"C:\Users\Kavinesh\Downloads\speech-94649.wav"  # Replace with your actual file
+rate, original_signal = load_audio(filename)
+
+if original_signal is not None:
+    subset_length = len(original_signal) // 2
+    encrypted_signal = encrypt_speech(original_signal[:subset_length])
+    
+    if len(encrypted_signal) > 0:
+        plot_distributions(original_signal[:subset_length], encrypted_signal)
+    else:
+        print("Encryption failed!")
+else:
+    print("Failed to load audio.")

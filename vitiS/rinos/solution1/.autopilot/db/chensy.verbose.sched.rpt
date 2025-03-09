@@ -1,0 +1,501 @@
+
+
+================================================================
+== Vitis HLS Report for 'chensy'
+================================================================
+* Date:           Sun Feb  2 20:37:42 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        rinos
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a100t-csg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  10.00 ns|  11.710 ns|     2.70 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_12_1  |        ?|        ?|        27|         21|          1|     ?|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 21, depth = 27
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 27
+* Pipeline : 1
+  Pipeline-0 : II = 21, D = 27, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 7.39>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%x = alloca i32 1" [rinos/chen.cpp:10]   --->   Operation 30 'alloca' 'x' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%y = alloca i32 1" [rinos/chen.cpp:10]   --->   Operation 31 'alloca' 'y' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%z = alloca i32 1" [rinos/chen.cpp:10]   --->   Operation 32 'alloca' 'z' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%w = alloca i32 1" [rinos/chen.cpp:10]   --->   Operation 33 'alloca' 'w' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 34 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%spectopmodule_ln3 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [rinos/chen.cpp:3]   --->   Operation 35 'spectopmodule' 'spectopmodule_ln3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %dt"   --->   Operation 36 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %dt, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %num_iterations"   --->   Operation 38 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %num_iterations, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %alpha"   --->   Operation 40 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %alpha, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %sigma"   --->   Operation 42 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %sigma, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 43 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %beta"   --->   Operation 44 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %beta, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 45 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gamma"   --->   Operation 46 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gamma, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 47 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %epsilon"   --->   Operation 48 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %epsilon, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 49 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %x_out"   --->   Operation 50 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %x_out, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 51 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %y_out"   --->   Operation 52 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %y_out, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 53 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %z_out"   --->   Operation 54 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %z_out, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 55 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %w_out"   --->   Operation 56 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %w_out, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 57 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%epsilon_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %epsilon" [rinos/chen.cpp:4]   --->   Operation 58 'read' 'epsilon_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%gamma_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %gamma" [rinos/chen.cpp:4]   --->   Operation 59 'read' 'gamma_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%beta_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %beta" [rinos/chen.cpp:4]   --->   Operation 60 'read' 'beta_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%sigma_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %sigma" [rinos/chen.cpp:4]   --->   Operation 61 'read' 'sigma_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%alpha_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %alpha" [rinos/chen.cpp:4]   --->   Operation 62 'read' 'alpha_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%num_iterations_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %num_iterations" [rinos/chen.cpp:4]   --->   Operation 63 'read' 'num_iterations_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%dt_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %dt" [rinos/chen.cpp:4]   --->   Operation 64 'read' 'dt_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (1.61ns)   --->   "%store_ln0 = store i31 0, i31 %i"   --->   Operation 65 'store' 'store_ln0' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 66 [1/1] (1.61ns)   --->   "%store_ln10 = store i32 0, i32 %w" [rinos/chen.cpp:10]   --->   Operation 66 'store' 'store_ln10' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 67 [1/1] (1.61ns)   --->   "%store_ln10 = store i32 0.01, i32 %z" [rinos/chen.cpp:10]   --->   Operation 67 'store' 'store_ln10' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 68 [1/1] (1.61ns)   --->   "%store_ln10 = store i32 0.01, i32 %y" [rinos/chen.cpp:10]   --->   Operation 68 'store' 'store_ln10' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 69 [1/1] (1.61ns)   --->   "%store_ln10 = store i32 0, i32 %x" [rinos/chen.cpp:10]   --->   Operation 69 'store' 'store_ln10' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%br_ln12 = br void %for.inc" [rinos/chen.cpp:12]   --->   Operation 70 'br' 'br_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%i_load = load i31 %i" [rinos/chen.cpp:12]   --->   Operation 71 'load' 'i_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%zext_ln12 = zext i31 %i_load" [rinos/chen.cpp:12]   --->   Operation 72 'zext' 'zext_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (2.70ns)   --->   "%icmp_ln12 = icmp_slt  i32 %zext_ln12, i32 %num_iterations_read" [rinos/chen.cpp:12]   --->   Operation 73 'icmp' 'icmp_ln12' <Predicate = true> <Delay = 2.70> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 74 [1/1] (2.66ns)   --->   "%add_ln12 = add i31 %i_load, i31 1" [rinos/chen.cpp:12]   --->   Operation 74 'add' 'add_ln12' <Predicate = true> <Delay = 2.66> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.66> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%br_ln12 = br i1 %icmp_ln12, void %for.end.loopexit, void %for.inc.split" [rinos/chen.cpp:12]   --->   Operation 75 'br' 'br_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%x_load = load i32 %x" [rinos/chen.cpp:19]   --->   Operation 76 'load' 'x_load' <Predicate = (icmp_ln12)> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%z_load = load i32 %z" [rinos/chen.cpp:21]   --->   Operation 77 'load' 'z_load' <Predicate = (icmp_ln12)> <Delay = 0.00>
+ST_1 : Operation 78 [4/4] (5.78ns)   --->   "%mul1 = fmul i32 %x_load, i32 %sigma_read" [rinos/chen.cpp:15]   --->   Operation 78 'fmul' 'mul1' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 79 [4/4] (5.78ns)   --->   "%mul2 = fmul i32 %x_load, i32 %z_load" [rinos/chen.cpp:15]   --->   Operation 79 'fmul' 'mul2' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 80 [1/1] (1.61ns)   --->   "%store_ln12 = store i31 %add_ln12, i31 %i" [rinos/chen.cpp:12]   --->   Operation 80 'store' 'store_ln12' <Predicate = (icmp_ln12)> <Delay = 1.61>
+
+State 2 <SV = 1> <Delay = 5.92>
+ST_2 : Operation 81 [3/4] (5.78ns)   --->   "%mul1 = fmul i32 %x_load, i32 %sigma_read" [rinos/chen.cpp:15]   --->   Operation 81 'fmul' 'mul1' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 82 [3/4] (5.78ns)   --->   "%mul2 = fmul i32 %x_load, i32 %z_load" [rinos/chen.cpp:15]   --->   Operation 82 'fmul' 'mul2' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 83 [4/4] (5.78ns)   --->   "%mul7 = fmul i32 %z_load, i32 %beta_read" [rinos/chen.cpp:16]   --->   Operation 83 'fmul' 'mul7' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 84 [7/7] (5.92ns)   --->   "%dw = fsub i32 %x_load, i32 %epsilon_read" [rinos/chen.cpp:17]   --->   Operation 84 'fsub' 'dw' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 5.92>
+ST_3 : Operation 85 [2/4] (5.78ns)   --->   "%mul1 = fmul i32 %x_load, i32 %sigma_read" [rinos/chen.cpp:15]   --->   Operation 85 'fmul' 'mul1' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 86 [2/4] (5.78ns)   --->   "%mul2 = fmul i32 %x_load, i32 %z_load" [rinos/chen.cpp:15]   --->   Operation 86 'fmul' 'mul2' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 87 [3/4] (5.78ns)   --->   "%mul7 = fmul i32 %z_load, i32 %beta_read" [rinos/chen.cpp:16]   --->   Operation 87 'fmul' 'mul7' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 88 [6/7] (5.92ns)   --->   "%dw = fsub i32 %x_load, i32 %epsilon_read" [rinos/chen.cpp:17]   --->   Operation 88 'fsub' 'dw' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 11.3>
+ST_4 : Operation 89 [1/4] (5.78ns)   --->   "%mul1 = fmul i32 %x_load, i32 %sigma_read" [rinos/chen.cpp:15]   --->   Operation 89 'fmul' 'mul1' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 90 [1/4] (5.78ns)   --->   "%mul2 = fmul i32 %x_load, i32 %z_load" [rinos/chen.cpp:15]   --->   Operation 90 'fmul' 'mul2' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 91 [6/6] (5.53ns)   --->   "%sub3 = fsub i32 %mul1, i32 %mul2" [rinos/chen.cpp:15]   --->   Operation 91 'fsub' 'sub3' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 92 [2/4] (5.78ns)   --->   "%mul7 = fmul i32 %z_load, i32 %beta_read" [rinos/chen.cpp:16]   --->   Operation 92 'fmul' 'mul7' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 93 [5/7] (5.92ns)   --->   "%dw = fsub i32 %x_load, i32 %epsilon_read" [rinos/chen.cpp:17]   --->   Operation 93 'fsub' 'dw' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 5.92>
+ST_5 : Operation 94 [5/6] (5.53ns)   --->   "%sub3 = fsub i32 %mul1, i32 %mul2" [rinos/chen.cpp:15]   --->   Operation 94 'fsub' 'sub3' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 95 [1/4] (5.78ns)   --->   "%mul7 = fmul i32 %z_load, i32 %beta_read" [rinos/chen.cpp:16]   --->   Operation 95 'fmul' 'mul7' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 96 [4/7] (5.92ns)   --->   "%dw = fsub i32 %x_load, i32 %epsilon_read" [rinos/chen.cpp:17]   --->   Operation 96 'fsub' 'dw' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 5.92>
+ST_6 : Operation 97 [1/1] (0.00ns)   --->   "%y_load = load i32 %y" [rinos/chen.cpp:20]   --->   Operation 97 'load' 'y_load' <Predicate = (icmp_ln12)> <Delay = 0.00>
+ST_6 : Operation 98 [6/6] (5.53ns)   --->   "%sub = fsub i32 %y_load, i32 %x_load" [rinos/chen.cpp:14]   --->   Operation 98 'fsub' 'sub' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 99 [4/6] (5.53ns)   --->   "%sub3 = fsub i32 %mul1, i32 %mul2" [rinos/chen.cpp:15]   --->   Operation 99 'fsub' 'sub3' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 100 [4/4] (5.78ns)   --->   "%mul4 = fmul i32 %y_load, i32 %gamma_read" [rinos/chen.cpp:15]   --->   Operation 100 'fmul' 'mul4' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 101 [4/4] (5.78ns)   --->   "%mul6 = fmul i32 %x_load, i32 %y_load" [rinos/chen.cpp:16]   --->   Operation 101 'fmul' 'mul6' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 102 [3/7] (5.92ns)   --->   "%dw = fsub i32 %x_load, i32 %epsilon_read" [rinos/chen.cpp:17]   --->   Operation 102 'fsub' 'dw' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 198 [1/1] (0.00ns)   --->   "%ret_ln30 = ret" [rinos/chen.cpp:30]   --->   Operation 198 'ret' 'ret_ln30' <Predicate = (!icmp_ln12)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 5.92>
+ST_7 : Operation 103 [5/6] (5.53ns)   --->   "%sub = fsub i32 %y_load, i32 %x_load" [rinos/chen.cpp:14]   --->   Operation 103 'fsub' 'sub' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 104 [3/6] (5.53ns)   --->   "%sub3 = fsub i32 %mul1, i32 %mul2" [rinos/chen.cpp:15]   --->   Operation 104 'fsub' 'sub3' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 105 [3/4] (5.78ns)   --->   "%mul4 = fmul i32 %y_load, i32 %gamma_read" [rinos/chen.cpp:15]   --->   Operation 105 'fmul' 'mul4' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 106 [3/4] (5.78ns)   --->   "%mul6 = fmul i32 %x_load, i32 %y_load" [rinos/chen.cpp:16]   --->   Operation 106 'fmul' 'mul6' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 107 [2/7] (5.92ns)   --->   "%dw = fsub i32 %x_load, i32 %epsilon_read" [rinos/chen.cpp:17]   --->   Operation 107 'fsub' 'dw' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 11.7>
+ST_8 : Operation 108 [4/6] (5.53ns)   --->   "%sub = fsub i32 %y_load, i32 %x_load" [rinos/chen.cpp:14]   --->   Operation 108 'fsub' 'sub' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 109 [2/6] (5.53ns)   --->   "%sub3 = fsub i32 %mul1, i32 %mul2" [rinos/chen.cpp:15]   --->   Operation 109 'fsub' 'sub3' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 110 [2/4] (5.78ns)   --->   "%mul4 = fmul i32 %y_load, i32 %gamma_read" [rinos/chen.cpp:15]   --->   Operation 110 'fmul' 'mul4' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 111 [2/4] (5.78ns)   --->   "%mul6 = fmul i32 %x_load, i32 %y_load" [rinos/chen.cpp:16]   --->   Operation 111 'fmul' 'mul6' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 112 [1/7] (5.92ns)   --->   "%dw = fsub i32 %x_load, i32 %epsilon_read" [rinos/chen.cpp:17]   --->   Operation 112 'fsub' 'dw' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 113 [4/4] (5.78ns)   --->   "%mul8 = fmul i32 %dw, i32 %dt_read" [rinos/chen.cpp:22]   --->   Operation 113 'fmul' 'mul8' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 11.3>
+ST_9 : Operation 114 [3/6] (5.53ns)   --->   "%sub = fsub i32 %y_load, i32 %x_load" [rinos/chen.cpp:14]   --->   Operation 114 'fsub' 'sub' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 115 [1/6] (5.53ns)   --->   "%sub3 = fsub i32 %mul1, i32 %mul2" [rinos/chen.cpp:15]   --->   Operation 115 'fsub' 'sub3' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 116 [1/4] (5.78ns)   --->   "%mul4 = fmul i32 %y_load, i32 %gamma_read" [rinos/chen.cpp:15]   --->   Operation 116 'fmul' 'mul4' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 117 [6/6] (5.53ns)   --->   "%add = fadd i32 %sub3, i32 %mul4" [rinos/chen.cpp:15]   --->   Operation 117 'fadd' 'add' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 118 [1/4] (5.78ns)   --->   "%mul6 = fmul i32 %x_load, i32 %y_load" [rinos/chen.cpp:16]   --->   Operation 118 'fmul' 'mul6' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 119 [6/6] (5.53ns)   --->   "%dz = fsub i32 %mul6, i32 %mul7" [rinos/chen.cpp:16]   --->   Operation 119 'fsub' 'dz' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 120 [3/4] (5.78ns)   --->   "%mul8 = fmul i32 %dw, i32 %dt_read" [rinos/chen.cpp:22]   --->   Operation 120 'fmul' 'mul8' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 5.78>
+ST_10 : Operation 121 [2/6] (5.53ns)   --->   "%sub = fsub i32 %y_load, i32 %x_load" [rinos/chen.cpp:14]   --->   Operation 121 'fsub' 'sub' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 122 [5/6] (5.53ns)   --->   "%add = fadd i32 %sub3, i32 %mul4" [rinos/chen.cpp:15]   --->   Operation 122 'fadd' 'add' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 123 [5/6] (5.53ns)   --->   "%dz = fsub i32 %mul6, i32 %mul7" [rinos/chen.cpp:16]   --->   Operation 123 'fsub' 'dz' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 124 [2/4] (5.78ns)   --->   "%mul8 = fmul i32 %dw, i32 %dt_read" [rinos/chen.cpp:22]   --->   Operation 124 'fmul' 'mul8' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 11.7>
+ST_11 : Operation 125 [1/1] (0.00ns)   --->   "%w_load = load i32 %w" [rinos/chen.cpp:22]   --->   Operation 125 'load' 'w_load' <Predicate = (icmp_ln12)> <Delay = 0.00>
+ST_11 : Operation 126 [1/6] (5.53ns)   --->   "%sub = fsub i32 %y_load, i32 %x_load" [rinos/chen.cpp:14]   --->   Operation 126 'fsub' 'sub' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 127 [4/4] (5.78ns)   --->   "%dx = fmul i32 %sub, i32 %alpha_read" [rinos/chen.cpp:14]   --->   Operation 127 'fmul' 'dx' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 128 [4/6] (5.53ns)   --->   "%add = fadd i32 %sub3, i32 %mul4" [rinos/chen.cpp:15]   --->   Operation 128 'fadd' 'add' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 129 [4/6] (5.53ns)   --->   "%dz = fsub i32 %mul6, i32 %mul7" [rinos/chen.cpp:16]   --->   Operation 129 'fsub' 'dz' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 130 [1/4] (5.78ns)   --->   "%mul8 = fmul i32 %dw, i32 %dt_read" [rinos/chen.cpp:22]   --->   Operation 130 'fmul' 'mul8' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 131 [7/7] (5.92ns)   --->   "%w_1 = fadd i32 %w_load, i32 %mul8" [rinos/chen.cpp:22]   --->   Operation 131 'fadd' 'w_1' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 5.92>
+ST_12 : Operation 132 [3/4] (5.78ns)   --->   "%dx = fmul i32 %sub, i32 %alpha_read" [rinos/chen.cpp:14]   --->   Operation 132 'fmul' 'dx' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 133 [3/6] (5.53ns)   --->   "%add = fadd i32 %sub3, i32 %mul4" [rinos/chen.cpp:15]   --->   Operation 133 'fadd' 'add' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 134 [3/6] (5.53ns)   --->   "%dz = fsub i32 %mul6, i32 %mul7" [rinos/chen.cpp:16]   --->   Operation 134 'fsub' 'dz' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 135 [6/7] (5.92ns)   --->   "%w_1 = fadd i32 %w_load, i32 %mul8" [rinos/chen.cpp:22]   --->   Operation 135 'fadd' 'w_1' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 5.92>
+ST_13 : Operation 136 [2/4] (5.78ns)   --->   "%dx = fmul i32 %sub, i32 %alpha_read" [rinos/chen.cpp:14]   --->   Operation 136 'fmul' 'dx' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 137 [2/6] (5.53ns)   --->   "%add = fadd i32 %sub3, i32 %mul4" [rinos/chen.cpp:15]   --->   Operation 137 'fadd' 'add' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 138 [2/6] (5.53ns)   --->   "%dz = fsub i32 %mul6, i32 %mul7" [rinos/chen.cpp:16]   --->   Operation 138 'fsub' 'dz' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 139 [5/7] (5.92ns)   --->   "%w_1 = fadd i32 %w_load, i32 %mul8" [rinos/chen.cpp:22]   --->   Operation 139 'fadd' 'w_1' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 11.5>
+ST_14 : Operation 140 [1/4] (5.78ns)   --->   "%dx = fmul i32 %sub, i32 %alpha_read" [rinos/chen.cpp:14]   --->   Operation 140 'fmul' 'dx' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 141 [1/6] (5.53ns)   --->   "%add = fadd i32 %sub3, i32 %mul4" [rinos/chen.cpp:15]   --->   Operation 141 'fadd' 'add' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 142 [6/6] (5.53ns)   --->   "%dy = fsub i32 %add, i32 %w_load" [rinos/chen.cpp:15]   --->   Operation 142 'fsub' 'dy' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 143 [1/6] (5.53ns)   --->   "%dz = fsub i32 %mul6, i32 %mul7" [rinos/chen.cpp:16]   --->   Operation 143 'fsub' 'dz' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 144 [4/4] (5.78ns)   --->   "%mul = fmul i32 %dx, i32 %dt_read" [rinos/chen.cpp:19]   --->   Operation 144 'fmul' 'mul' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 145 [4/4] (5.78ns)   --->   "%mul5 = fmul i32 %dz, i32 %dt_read" [rinos/chen.cpp:21]   --->   Operation 145 'fmul' 'mul5' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 146 [4/7] (5.92ns)   --->   "%w_1 = fadd i32 %w_load, i32 %mul8" [rinos/chen.cpp:22]   --->   Operation 146 'fadd' 'w_1' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 5.92>
+ST_15 : Operation 147 [5/6] (5.53ns)   --->   "%dy = fsub i32 %add, i32 %w_load" [rinos/chen.cpp:15]   --->   Operation 147 'fsub' 'dy' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 148 [3/4] (5.78ns)   --->   "%mul = fmul i32 %dx, i32 %dt_read" [rinos/chen.cpp:19]   --->   Operation 148 'fmul' 'mul' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 149 [3/4] (5.78ns)   --->   "%mul5 = fmul i32 %dz, i32 %dt_read" [rinos/chen.cpp:21]   --->   Operation 149 'fmul' 'mul5' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 150 [3/7] (5.92ns)   --->   "%w_1 = fadd i32 %w_load, i32 %mul8" [rinos/chen.cpp:22]   --->   Operation 150 'fadd' 'w_1' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 5.92>
+ST_16 : Operation 151 [4/6] (5.53ns)   --->   "%dy = fsub i32 %add, i32 %w_load" [rinos/chen.cpp:15]   --->   Operation 151 'fsub' 'dy' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 152 [2/4] (5.78ns)   --->   "%mul = fmul i32 %dx, i32 %dt_read" [rinos/chen.cpp:19]   --->   Operation 152 'fmul' 'mul' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 153 [2/4] (5.78ns)   --->   "%mul5 = fmul i32 %dz, i32 %dt_read" [rinos/chen.cpp:21]   --->   Operation 153 'fmul' 'mul5' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 154 [2/7] (5.92ns)   --->   "%w_1 = fadd i32 %w_load, i32 %mul8" [rinos/chen.cpp:22]   --->   Operation 154 'fadd' 'w_1' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 11.3>
+ST_17 : Operation 155 [3/6] (5.53ns)   --->   "%dy = fsub i32 %add, i32 %w_load" [rinos/chen.cpp:15]   --->   Operation 155 'fsub' 'dy' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 156 [1/4] (5.78ns)   --->   "%mul = fmul i32 %dx, i32 %dt_read" [rinos/chen.cpp:19]   --->   Operation 156 'fmul' 'mul' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 157 [6/6] (5.53ns)   --->   "%x_1 = fadd i32 %x_load, i32 %mul" [rinos/chen.cpp:19]   --->   Operation 157 'fadd' 'x_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 158 [1/4] (5.78ns)   --->   "%mul5 = fmul i32 %dz, i32 %dt_read" [rinos/chen.cpp:21]   --->   Operation 158 'fmul' 'mul5' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 159 [6/6] (5.53ns)   --->   "%z_1 = fadd i32 %z_load, i32 %mul5" [rinos/chen.cpp:21]   --->   Operation 159 'fadd' 'z_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 160 [1/7] (5.92ns)   --->   "%w_1 = fadd i32 %w_load, i32 %mul8" [rinos/chen.cpp:22]   --->   Operation 160 'fadd' 'w_1' <Predicate = (icmp_ln12)> <Delay = 5.92> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 6> <II = 1> <Delay = 5.92> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 161 [1/1] (0.00ns)   --->   "%bitcast_ln28 = bitcast i32 %w_1" [rinos/chen.cpp:28]   --->   Operation 161 'bitcast' 'bitcast_ln28' <Predicate = (icmp_ln12)> <Delay = 0.00>
+ST_17 : Operation 162 [1/1] (0.00ns)   --->   "%write_ln28 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %w_out, i32 %bitcast_ln28" [rinos/chen.cpp:28]   --->   Operation 162 'write' 'write_ln28' <Predicate = (icmp_ln12)> <Delay = 0.00>
+
+State 18 <SV = 17> <Delay = 5.53>
+ST_18 : Operation 163 [2/6] (5.53ns)   --->   "%dy = fsub i32 %add, i32 %w_load" [rinos/chen.cpp:15]   --->   Operation 163 'fsub' 'dy' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 164 [5/6] (5.53ns)   --->   "%x_1 = fadd i32 %x_load, i32 %mul" [rinos/chen.cpp:19]   --->   Operation 164 'fadd' 'x_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 165 [5/6] (5.53ns)   --->   "%z_1 = fadd i32 %z_load, i32 %mul5" [rinos/chen.cpp:21]   --->   Operation 165 'fadd' 'z_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 166 [1/1] (1.61ns)   --->   "%store_ln10 = store i32 %w_1, i32 %w" [rinos/chen.cpp:10]   --->   Operation 166 'store' 'store_ln10' <Predicate = (icmp_ln12)> <Delay = 1.61>
+
+State 19 <SV = 18> <Delay = 11.3>
+ST_19 : Operation 167 [1/6] (5.53ns)   --->   "%dy = fsub i32 %add, i32 %w_load" [rinos/chen.cpp:15]   --->   Operation 167 'fsub' 'dy' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 168 [4/6] (5.53ns)   --->   "%x_1 = fadd i32 %x_load, i32 %mul" [rinos/chen.cpp:19]   --->   Operation 168 'fadd' 'x_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 169 [4/4] (5.78ns)   --->   "%mul3 = fmul i32 %dy, i32 %dt_read" [rinos/chen.cpp:20]   --->   Operation 169 'fmul' 'mul3' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 170 [4/6] (5.53ns)   --->   "%z_1 = fadd i32 %z_load, i32 %mul5" [rinos/chen.cpp:21]   --->   Operation 170 'fadd' 'z_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 5.78>
+ST_20 : Operation 171 [3/6] (5.53ns)   --->   "%x_1 = fadd i32 %x_load, i32 %mul" [rinos/chen.cpp:19]   --->   Operation 171 'fadd' 'x_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 172 [3/4] (5.78ns)   --->   "%mul3 = fmul i32 %dy, i32 %dt_read" [rinos/chen.cpp:20]   --->   Operation 172 'fmul' 'mul3' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 173 [3/6] (5.53ns)   --->   "%z_1 = fadd i32 %z_load, i32 %mul5" [rinos/chen.cpp:21]   --->   Operation 173 'fadd' 'z_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 5.78>
+ST_21 : Operation 174 [2/6] (5.53ns)   --->   "%x_1 = fadd i32 %x_load, i32 %mul" [rinos/chen.cpp:19]   --->   Operation 174 'fadd' 'x_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 175 [2/4] (5.78ns)   --->   "%mul3 = fmul i32 %dy, i32 %dt_read" [rinos/chen.cpp:20]   --->   Operation 175 'fmul' 'mul3' <Predicate = (icmp_ln12)> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 176 [2/6] (5.53ns)   --->   "%z_1 = fadd i32 %z_load, i32 %mul5" [rinos/chen.cpp:21]   --->   Operation 176 'fadd' 'z_1' <Predicate = (icmp_ln12)> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 21> <Delay = 11.3>
+ST_22 : Operation 177 [1/6] (5.53ns)   --->   "%x_1 = fadd i32 %x_load, i32 %mul" [rinos/chen.cpp:19]   --->   Operation 177 'fadd' 'x_1' <Predicate = true> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 178 [1/4] (5.78ns)   --->   "%mul3 = fmul i32 %dy, i32 %dt_read" [rinos/chen.cpp:20]   --->   Operation 178 'fmul' 'mul3' <Predicate = true> <Delay = 5.78> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.78> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 179 [6/6] (5.53ns)   --->   "%y_1 = fadd i32 %y_load, i32 %mul3" [rinos/chen.cpp:20]   --->   Operation 179 'fadd' 'y_1' <Predicate = true> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 180 [1/6] (5.53ns)   --->   "%z_1 = fadd i32 %z_load, i32 %mul5" [rinos/chen.cpp:21]   --->   Operation 180 'fadd' 'z_1' <Predicate = true> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 181 [1/1] (0.00ns)   --->   "%bitcast_ln25 = bitcast i32 %x_1" [rinos/chen.cpp:25]   --->   Operation 181 'bitcast' 'bitcast_ln25' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 182 [1/1] (0.00ns)   --->   "%write_ln25 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %x_out, i32 %bitcast_ln25" [rinos/chen.cpp:25]   --->   Operation 182 'write' 'write_ln25' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 183 [1/1] (0.00ns)   --->   "%bitcast_ln27 = bitcast i32 %z_1" [rinos/chen.cpp:27]   --->   Operation 183 'bitcast' 'bitcast_ln27' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 184 [1/1] (0.00ns)   --->   "%write_ln27 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %z_out, i32 %bitcast_ln27" [rinos/chen.cpp:27]   --->   Operation 184 'write' 'write_ln27' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 185 [1/1] (1.61ns)   --->   "%store_ln10 = store i32 %z_1, i32 %z" [rinos/chen.cpp:10]   --->   Operation 185 'store' 'store_ln10' <Predicate = true> <Delay = 1.61>
+ST_22 : Operation 186 [1/1] (1.61ns)   --->   "%store_ln10 = store i32 %x_1, i32 %x" [rinos/chen.cpp:10]   --->   Operation 186 'store' 'store_ln10' <Predicate = true> <Delay = 1.61>
+
+State 23 <SV = 22> <Delay = 5.53>
+ST_23 : Operation 187 [5/6] (5.53ns)   --->   "%y_1 = fadd i32 %y_load, i32 %mul3" [rinos/chen.cpp:20]   --->   Operation 187 'fadd' 'y_1' <Predicate = true> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 23> <Delay = 5.53>
+ST_24 : Operation 188 [4/6] (5.53ns)   --->   "%y_1 = fadd i32 %y_load, i32 %mul3" [rinos/chen.cpp:20]   --->   Operation 188 'fadd' 'y_1' <Predicate = true> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 24> <Delay = 5.53>
+ST_25 : Operation 189 [3/6] (5.53ns)   --->   "%y_1 = fadd i32 %y_load, i32 %mul3" [rinos/chen.cpp:20]   --->   Operation 189 'fadd' 'y_1' <Predicate = true> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 25> <Delay = 5.53>
+ST_26 : Operation 190 [2/6] (5.53ns)   --->   "%y_1 = fadd i32 %y_load, i32 %mul3" [rinos/chen.cpp:20]   --->   Operation 190 'fadd' 'y_1' <Predicate = true> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 26> <Delay = 7.14>
+ST_27 : Operation 191 [1/1] (0.00ns)   --->   "%specpipeline_ln13 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_0" [rinos/chen.cpp:13]   --->   Operation 191 'specpipeline' 'specpipeline_ln13' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 192 [1/1] (0.00ns)   --->   "%specloopname_ln12 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [rinos/chen.cpp:12]   --->   Operation 192 'specloopname' 'specloopname_ln12' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 193 [1/6] (5.53ns)   --->   "%y_1 = fadd i32 %y_load, i32 %mul3" [rinos/chen.cpp:20]   --->   Operation 193 'fadd' 'y_1' <Predicate = true> <Delay = 5.53> <CoreInst = "FAddSub_nodsp">   --->   Core 17 'FAddSub_nodsp' <Latency = 5> <II = 1> <Delay = 5.53> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 194 [1/1] (0.00ns)   --->   "%bitcast_ln26 = bitcast i32 %y_1" [rinos/chen.cpp:26]   --->   Operation 194 'bitcast' 'bitcast_ln26' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 195 [1/1] (0.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %y_out, i32 %bitcast_ln26" [rinos/chen.cpp:26]   --->   Operation 195 'write' 'write_ln26' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 196 [1/1] (1.61ns)   --->   "%store_ln10 = store i32 %y_1, i32 %y" [rinos/chen.cpp:10]   --->   Operation 196 'store' 'store_ln10' <Predicate = true> <Delay = 1.61>
+ST_27 : Operation 197 [1/1] (0.00ns)   --->   "%br_ln12 = br void %for.inc" [rinos/chen.cpp:12]   --->   Operation 197 'br' 'br_ln12' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 7.394ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln10', rinos/chen.cpp:10) of constant 0 on local variable 'x', rinos/chen.cpp:10 [51]  (1.610 ns)
+	'load' operation 32 bit ('x_load', rinos/chen.cpp:19) on local variable 'x', rinos/chen.cpp:10 [60]  (0.000 ns)
+	'fmul' operation 32 bit ('mul1', rinos/chen.cpp:15) [68]  (5.784 ns)
+
+ <State 2>: 5.926ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('dw', rinos/chen.cpp:17) [77]  (5.926 ns)
+
+ <State 3>: 5.926ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('dw', rinos/chen.cpp:17) [77]  (5.926 ns)
+
+ <State 4>: 11.321ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('mul1', rinos/chen.cpp:15) [68]  (5.784 ns)
+	'fsub' operation 32 bit ('sub3', rinos/chen.cpp:15) [70]  (5.537 ns)
+
+ <State 5>: 5.926ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('dw', rinos/chen.cpp:17) [77]  (5.926 ns)
+
+ <State 6>: 5.926ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('dw', rinos/chen.cpp:17) [77]  (5.926 ns)
+
+ <State 7>: 5.926ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('dw', rinos/chen.cpp:17) [77]  (5.926 ns)
+
+ <State 8>: 11.710ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('dw', rinos/chen.cpp:17) [77]  (5.926 ns)
+	'fmul' operation 32 bit ('mul8', rinos/chen.cpp:22) [84]  (5.784 ns)
+
+ <State 9>: 11.321ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('mul4', rinos/chen.cpp:15) [71]  (5.784 ns)
+	'fadd' operation 32 bit ('add', rinos/chen.cpp:15) [72]  (5.537 ns)
+
+ <State 10>: 5.784ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('mul8', rinos/chen.cpp:22) [84]  (5.784 ns)
+
+ <State 11>: 11.710ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('mul8', rinos/chen.cpp:22) [84]  (5.784 ns)
+	'fadd' operation 32 bit ('w', rinos/chen.cpp:22) [85]  (5.926 ns)
+
+ <State 12>: 5.926ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('w', rinos/chen.cpp:22) [85]  (5.926 ns)
+
+ <State 13>: 5.926ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('w', rinos/chen.cpp:22) [85]  (5.926 ns)
+
+ <State 14>: 11.568ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('dx', rinos/chen.cpp:14) [67]  (5.784 ns)
+	'fmul' operation 32 bit ('mul', rinos/chen.cpp:19) [78]  (5.784 ns)
+
+ <State 15>: 5.926ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('w', rinos/chen.cpp:22) [85]  (5.926 ns)
+
+ <State 16>: 5.926ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('w', rinos/chen.cpp:22) [85]  (5.926 ns)
+
+ <State 17>: 11.321ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('mul', rinos/chen.cpp:19) [78]  (5.784 ns)
+	'fadd' operation 32 bit ('x', rinos/chen.cpp:19) [79]  (5.537 ns)
+
+ <State 18>: 5.537ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('dy', rinos/chen.cpp:15) [73]  (5.537 ns)
+
+ <State 19>: 11.321ns
+The critical path consists of the following:
+	'fsub' operation 32 bit ('dy', rinos/chen.cpp:15) [73]  (5.537 ns)
+	'fmul' operation 32 bit ('mul3', rinos/chen.cpp:20) [80]  (5.784 ns)
+
+ <State 20>: 5.784ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('mul3', rinos/chen.cpp:20) [80]  (5.784 ns)
+
+ <State 21>: 5.784ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('mul3', rinos/chen.cpp:20) [80]  (5.784 ns)
+
+ <State 22>: 11.321ns
+The critical path consists of the following:
+	'fmul' operation 32 bit ('mul3', rinos/chen.cpp:20) [80]  (5.784 ns)
+	'fadd' operation 32 bit ('y', rinos/chen.cpp:20) [81]  (5.537 ns)
+
+ <State 23>: 5.537ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('y', rinos/chen.cpp:20) [81]  (5.537 ns)
+
+ <State 24>: 5.537ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('y', rinos/chen.cpp:20) [81]  (5.537 ns)
+
+ <State 25>: 5.537ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('y', rinos/chen.cpp:20) [81]  (5.537 ns)
+
+ <State 26>: 5.537ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('y', rinos/chen.cpp:20) [81]  (5.537 ns)
+
+ <State 27>: 7.147ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('y', rinos/chen.cpp:20) [81]  (5.537 ns)
+	'store' operation 0 bit ('store_ln10', rinos/chen.cpp:10) of variable 'y', rinos/chen.cpp:20 on local variable 'y', rinos/chen.cpp:10 [97]  (1.610 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

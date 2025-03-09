@@ -1,0 +1,146 @@
+
+
+================================================================
+== Vitis HLS Report for 'encryfinal_Pipeline_VITIS_LOOP_50_4'
+================================================================
+* Date:           Thu Feb  6 20:26:39 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        encryptionfinale
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a100t-csg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.514 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+-----------+-----------+-----------+-----+-----------+---------+
+    |   Latency (cycles)  |   Latency (absolute)  |     Interval    | Pipeline|
+    |   min   |    max    |    min    |    max    | min |    max    |   Type  |
+    +---------+-----------+-----------+-----------+-----+-----------+---------+
+    |        4|  268435457|  40.000 ns|  2.684 sec|    4|  268435457|       no|
+    +---------+-----------+-----------+-----------+-----+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+-----------+----------+-----------+-----------+---------------+----------+
+        |                   |   Latency (cycles)  | Iteration|  Initiation Interval  |      Trip     |          |
+        |     Loop Name     |   min   |    max    |  Latency |  achieved |   target  |     Count     | Pipelined|
+        +-------------------+---------+-----------+----------+-----------+-----------+---------------+----------+
+        |- VITIS_LOOP_50_4  |        2|  268435455|         2|          1|          1|  2 ~ 268435455|       yes|
+        +-------------------+---------+-----------+----------+-----------+-----------+---------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.67>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%step_read = read i25 @_ssdm_op_Read.ap_auto.i25, i25 %step"   --->   Operation 6 'read' 'step_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.61ns)   --->   "%store_ln50 = store i5 0, i5 %i" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 7 'store' 'store_ln50' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc45.i"   --->   Operation 8 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_3 = load i5 %i" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 9 'load' 'i_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%zext_ln50_1 = zext i5 %i_3" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 10 'zext' 'zext_ln50_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (2.45ns)   --->   "%icmp_ln50 = icmp_eq  i25 %zext_ln50_1, i25 %step_read" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 11 'icmp' 'icmp_ln50' <Predicate = true> <Delay = 2.45> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.45> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 2, i64 268435455, i64 134217727"   --->   Operation 12 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (1.86ns)   --->   "%add_ln50 = add i5 %i_3, i5 1" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 13 'add' 'add_ln50' <Predicate = true> <Delay = 1.86> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln50 = br i1 %icmp_ln50, void %for.inc45.i.split, void %for.inc48.i.loopexit.exitStub" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 14 'br' 'br_ln50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%zext_ln50 = zext i5 %i_3" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 15 'zext' 'zext_ln50' <Predicate = (!icmp_ln50)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%temp_addr = getelementptr i64 %temp, i64 0, i64 %zext_ln50" [encryptionfinale/chaotic_encrypt.cpp:51->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 16 'getelementptr' 'temp_addr' <Predicate = (!icmp_ln50)> <Delay = 0.00>
+ST_1 : Operation 17 [2/2] (3.25ns)   --->   "%temp_load = load i4 %temp_addr" [encryptionfinale/chaotic_encrypt.cpp:51->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 17 'load' 'temp_load' <Predicate = (!icmp_ln50)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 16> <RAM>
+ST_1 : Operation 18 [1/1] (1.61ns)   --->   "%store_ln50 = store i5 %add_ln50, i5 %i" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 18 'store' 'store_ln50' <Predicate = (!icmp_ln50)> <Delay = 1.61>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 25 'ret' 'ret_ln0' <Predicate = (icmp_ln50)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 6.51>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%specpipeline_ln50 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 19 'specpipeline' 'specpipeline_ln50' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln50 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 20 'specloopname' 'specloopname_ln50' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/2] (3.25ns)   --->   "%temp_load = load i4 %temp_addr" [encryptionfinale/chaotic_encrypt.cpp:51->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 21 'load' 'temp_load' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 16> <RAM>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%transformedSignal_addr = getelementptr i64 %transformedSignal, i64 0, i64 %zext_ln50" [encryptionfinale/chaotic_encrypt.cpp:51->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 22 'getelementptr' 'transformedSignal_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (3.25ns)   --->   "%store_ln51 = store i64 %temp_load, i4 %transformedSignal_addr" [encryptionfinale/chaotic_encrypt.cpp:51->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 23 'store' 'store_ln51' <Predicate = true> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 16> <RAM>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln50 = br void %for.inc45.i" [encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99]   --->   Operation 24 'br' 'br_ln50' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 5.679ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln50', encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99) of constant 0 on local variable 'i', encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99 [6]  (1.610 ns)
+	'load' operation 5 bit ('i', encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99) on local variable 'i', encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99 [9]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln50', encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99) [11]  (2.459 ns)
+	'store' operation 0 bit ('store_ln50', encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99) of variable 'add_ln50', encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99 on local variable 'i', encryptionfinale/chaotic_encrypt.cpp:50->encryptionfinale/chaotic_encrypt.cpp:99 [23]  (1.610 ns)
+
+ <State 2>: 6.514ns
+The critical path consists of the following:
+	'load' operation 64 bit ('temp_load', encryptionfinale/chaotic_encrypt.cpp:51->encryptionfinale/chaotic_encrypt.cpp:99) on array 'temp' [20]  (3.257 ns)
+	'store' operation 0 bit ('store_ln51', encryptionfinale/chaotic_encrypt.cpp:51->encryptionfinale/chaotic_encrypt.cpp:99) of variable 'temp_load', encryptionfinale/chaotic_encrypt.cpp:51->encryptionfinale/chaotic_encrypt.cpp:99 on array 'transformedSignal' [22]  (3.257 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

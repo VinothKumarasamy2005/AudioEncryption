@@ -1,0 +1,622 @@
+{
+  "Top": "chensy",
+  "RtlTop": "chensy",
+  "RtlPrefix": "",
+  "RtlSubPrefix": "chensy_",
+  "SourceLanguage": "cpp",
+  "HostMachineBits": "64",
+  "FunctionProtocol": "ap_ctrl_hs",
+  "ResetStyle": "control",
+  "Target": {
+    "Family": "artix7",
+    "Device": "xc7a100t",
+    "Package": "-csg324",
+    "Speed": "-1",
+    "Triple": "fpga64-xilinx-none"
+  },
+  "Args": {
+    "dt": {
+      "index": "0",
+      "direction": "in",
+      "srcType": "float",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "dt",
+          "name": "dt",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "num_iterations": {
+      "index": "1",
+      "direction": "in",
+      "srcType": "int",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "num_iterations",
+          "name": "num_iterations",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "alpha": {
+      "index": "2",
+      "direction": "in",
+      "srcType": "float",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "alpha",
+          "name": "alpha",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "sigma": {
+      "index": "3",
+      "direction": "in",
+      "srcType": "float",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "sigma",
+          "name": "sigma",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "beta": {
+      "index": "4",
+      "direction": "in",
+      "srcType": "float",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "beta",
+          "name": "beta",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "gamma": {
+      "index": "5",
+      "direction": "in",
+      "srcType": "float",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "gamma",
+          "name": "gamma",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "epsilon": {
+      "index": "6",
+      "direction": "in",
+      "srcType": "float",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "port",
+          "interface": "epsilon",
+          "name": "epsilon",
+          "usage": "data",
+          "direction": "in"
+        }]
+    },
+    "x_out": {
+      "index": "7",
+      "direction": "out",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "x_out",
+          "name": "x_out",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "x_out_ap_vld",
+          "name": "x_out_ap_vld",
+          "usage": "control",
+          "direction": "out"
+        }
+      ]
+    },
+    "y_out": {
+      "index": "8",
+      "direction": "out",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "y_out",
+          "name": "y_out",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "y_out_ap_vld",
+          "name": "y_out_ap_vld",
+          "usage": "control",
+          "direction": "out"
+        }
+      ]
+    },
+    "z_out": {
+      "index": "9",
+      "direction": "out",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "z_out",
+          "name": "z_out",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "z_out_ap_vld",
+          "name": "z_out_ap_vld",
+          "usage": "control",
+          "direction": "out"
+        }
+      ]
+    },
+    "w_out": {
+      "index": "10",
+      "direction": "out",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "w_out",
+          "name": "w_out",
+          "usage": "data",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "w_out_ap_vld",
+          "name": "w_out_ap_vld",
+          "usage": "control",
+          "direction": "out"
+        }
+      ]
+    }
+  },
+  "HlsSolution": {
+    "FlowTarget": "vivado",
+    "ConfigTcl": [
+      "config_export -output=C:\/Windows\/vitiS\/rinos\/solution1",
+      "config_export -format=ip_catalog",
+      "config_export -rtl=verilog"
+    ],
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "KernelName": "chensy"
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "10",
+    "Uncertainty": "2.7",
+    "IsCombinational": "0",
+    "II": "undef",
+    "Latency": "undef"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "xilinx.com",
+    "Library": "hls",
+    "Name": "chensy",
+    "Version": "1.0",
+    "DisplayName": "Chensy",
+    "Revision": "2113937925",
+    "Description": "An IP generated by Vitis HLS",
+    "Taxonomy": "\/VITIS_HLS_IP",
+    "AutoFamilySupport": "",
+    "ZipFile": "xilinx_com_hls_chensy_1_0.zip"
+  },
+  "Files": {
+    "CSource": ["..\/chen.cpp"],
+    "Vhdl": [
+      "impl\/vhdl\/chensy_faddfsub_32ns_32ns_32_6_no_dsp_1.vhd",
+      "impl\/vhdl\/chensy_faddfsub_32ns_32ns_32_7_full_dsp_1.vhd",
+      "impl\/vhdl\/chensy_flow_control_loop_pipe.vhd",
+      "impl\/vhdl\/chensy_fmul_32ns_32ns_32_4_max_dsp_1.vhd",
+      "impl\/vhdl\/chensy.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/chensy_faddfsub_32ns_32ns_32_6_no_dsp_1.v",
+      "impl\/verilog\/chensy_faddfsub_32ns_32ns_32_7_full_dsp_1.v",
+      "impl\/verilog\/chensy_flow_control_loop_pipe.v",
+      "impl\/verilog\/chensy_fmul_32ns_32ns_32_4_max_dsp_1.v",
+      "impl\/verilog\/chensy.v"
+    ],
+    "IpMisc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/chensy_faddfsub_32ns_32ns_32_6_no_dsp_1_ip.tcl",
+      "impl\/misc\/chensy_faddfsub_32ns_32ns_32_7_full_dsp_1_ip.tcl",
+      "impl\/misc\/chensy_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl"
+    ],
+    "CsynthXml": "syn\/report\/csynth.xml",
+    "DebugDir": ".debug",
+    "KernelXml": ".autopilot\/db\/kernel.internal.xml",
+    "Xo": "",
+    "XoHlsDir": "",
+    "ProtoInst": [".debug\/chensy.protoinst"]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "Ip": [
+      {
+        "Name": "chensy_faddfsub_32ns_32ns_32_6_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 4 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name chensy_faddfsub_32ns_32ns_32_6_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "chensy_faddfsub_32ns_32ns_32_7_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 5 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name chensy_faddfsub_32ns_32ns_32_7_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "chensy_fmul_32ns_32ns_32_4_max_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name chensy_fmul_32ns_32ns_32_4_max_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      }
+    ]
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "busTypeName": "clock",
+      "mode": "slave",
+      "busParams": {"ASSOCIATED_RESET": "ap_rst"},
+      "portMap": {"ap_clk": "CLK"},
+      "ports": ["ap_clk"]
+    },
+    "ap_rst": {
+      "type": "reset",
+      "busTypeName": "reset",
+      "mode": "slave",
+      "busParams": {"POLARITY": "ACTIVE_HIGH"},
+      "portMap": {"ap_rst": "RST"},
+      "ports": ["ap_rst"]
+    },
+    "ap_ctrl": {
+      "type": "ap_ctrl",
+      "busTypeName": "acc_handshake",
+      "mode": "slave",
+      "portMap": {
+        "ap_start": "start",
+        "ap_done": "done",
+        "ap_idle": "idle",
+        "ap_ready": "ready"
+      },
+      "ports": [
+        "ap_done",
+        "ap_idle",
+        "ap_ready",
+        "ap_start"
+      ]
+    },
+    "dt": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"dt": "DATA"},
+      "ports": ["dt"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "dt"
+        }]
+    },
+    "num_iterations": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"num_iterations": "DATA"},
+      "ports": ["num_iterations"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "num_iterations"
+        }]
+    },
+    "alpha": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"alpha": "DATA"},
+      "ports": ["alpha"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "alpha"
+        }]
+    },
+    "sigma": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"sigma": "DATA"},
+      "ports": ["sigma"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "sigma"
+        }]
+    },
+    "beta": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"beta": "DATA"},
+      "ports": ["beta"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "beta"
+        }]
+    },
+    "gamma": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"gamma": "DATA"},
+      "ports": ["gamma"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "gamma"
+        }]
+    },
+    "epsilon": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_none",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"epsilon": "DATA"},
+      "ports": ["epsilon"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "epsilon"
+        }]
+    },
+    "x_out": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_vld",
+      "mode": "master",
+      "dataWidth": "32",
+      "portMap": {"x_out": "DATA"},
+      "ports": ["x_out"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "x_out"
+        }]
+    },
+    "y_out": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_vld",
+      "mode": "master",
+      "dataWidth": "32",
+      "portMap": {"y_out": "DATA"},
+      "ports": ["y_out"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "y_out"
+        }]
+    },
+    "z_out": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_vld",
+      "mode": "master",
+      "dataWidth": "32",
+      "portMap": {"z_out": "DATA"},
+      "ports": ["z_out"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "z_out"
+        }]
+    },
+    "w_out": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_vld",
+      "mode": "master",
+      "dataWidth": "32",
+      "portMap": {"w_out": "DATA"},
+      "ports": ["w_out"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_none",
+          "register_option": "0",
+          "argName": "w_out"
+        }]
+    }
+  },
+  "RtlPorts": {
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_start": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_done": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_idle": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_ready": {
+      "dir": "out",
+      "width": "1"
+    },
+    "dt": {
+      "dir": "in",
+      "width": "32"
+    },
+    "num_iterations": {
+      "dir": "in",
+      "width": "32"
+    },
+    "alpha": {
+      "dir": "in",
+      "width": "32"
+    },
+    "sigma": {
+      "dir": "in",
+      "width": "32"
+    },
+    "beta": {
+      "dir": "in",
+      "width": "32"
+    },
+    "gamma": {
+      "dir": "in",
+      "width": "32"
+    },
+    "epsilon": {
+      "dir": "in",
+      "width": "32"
+    },
+    "x_out": {
+      "dir": "out",
+      "width": "32"
+    },
+    "x_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "y_out": {
+      "dir": "out",
+      "width": "32"
+    },
+    "y_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "z_out": {
+      "dir": "out",
+      "width": "32"
+    },
+    "z_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "w_out": {
+      "dir": "out",
+      "width": "32"
+    },
+    "w_out_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {"ModuleName": "chensy"},
+    "Info": {"chensy": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      }},
+    "Metrics": {"chensy": {
+        "Latency": {
+          "LatencyBest": "",
+          "LatencyAvg": "",
+          "LatencyWorst": "",
+          "PipelineII": "",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "11.710"
+        },
+        "Loops": [{
+            "Name": "VITIS_LOOP_12_1",
+            "TripCount": "",
+            "Latency": "",
+            "PipelineII": "21",
+            "PipelineDepth": "27"
+          }],
+        "Area": {
+          "DSP": "8",
+          "AVAIL_DSP": "240",
+          "UTIL_DSP": "3",
+          "FF": "1684",
+          "AVAIL_FF": "126800",
+          "UTIL_FF": "1",
+          "LUT": "1843",
+          "AVAIL_LUT": "63400",
+          "UTIL_LUT": "2",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "270",
+          "UTIL_BRAM": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      }}
+  },
+  "GenerateBdFiles": "0",
+  "GenData": {
+    "DataVersion": "0.2",
+    "Time": "2025-02-02 20:45:20 +0530",
+    "ToolName": "vitis_hls",
+    "ToolVersion": "2023.2"
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="framing.cpp" path="C:\Windows\vitiS\framing\framing.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="tb.cpp" path="C:\Windows\vitiS\framing\tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -1,0 +1,57 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "3 1 2",
+    "file": "encryfinal.cpp",
+    "fileloc": 93,
+    "instructions": 13,
+    "name": "encryfinal",
+    "total_instructions": 108
+  },
+  "1": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "encryfinal.cpp",
+    "fileloc": 85,
+    "instructions": 14,
+    "loads": {
+      "G": 1,
+      "L": 1
+    },
+    "name": "multiplySignals",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 14
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "encryfinal.cpp",
+    "fileloc": 58,
+    "instructions": 14,
+    "loads": {
+      "L": 1
+    },
+    "name": "chaoticPermutation",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 14
+  },
+  "3": {
+    "basicblocks": 14,
+    "calls": "",
+    "file": "encryfinal.cpp",
+    "fileloc": 39,
+    "instructions": 67,
+    "loads": {
+      "L": 4
+    },
+    "name": "haarDWT4",
+    "stores": {
+      "L": 5
+    },
+    "total_instructions": 67
+  }
+}

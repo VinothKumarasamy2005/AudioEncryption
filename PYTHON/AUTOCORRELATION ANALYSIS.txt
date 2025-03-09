@@ -1,0 +1,148 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.io.wavfile as wav
+import pywt  # For Haar DWT
+
+# ---------------------------------------------------------------------------------
+# Load Speech Signal
+def load_audio(filename):
+    try:
+        rate, data = wav.read(filename)
+        if data.ndim > 1:
+            data = data[:, 0]  # Take one channel if stereo
+        return rate, data.astype(float) / np.max(np.abs(data))  # Normalize
+    except Exception as e:
+        print("Error loading audio file:", e)
+        return None, None
+
+# ---------------------------------------------------------------------------------
+# Chen's Hyperchaotic System
+def generate_chen_chaos(length, dt=0.01):
+    alpha, sigma, gamm, beta, epsilon = 36.0, 16.0, 28.0, 3.0, 0.2
+    x, y, z, w = 0.1, 0.1, 0.1, 0.1  
+    chaos_seq = np.zeros(length)
+    
+    for i in range(length):
+        dx = alpha * (y - x)
+        dy = sigma * x - x * z + gamm * y - w
+        dz = x * y - beta * z
+        dw = x - epsilon
+
+        x += dx * dt
+        y += dy * dt
+        z += dz * dt
+        w += dw * dt
+
+        # Prevent NaN or Inf values
+        x, y, z, w = [0.1 if np.isnan(v) or np.isinf(v) else v for v in [x, y, z, w]]
+        chaos_seq[i] = x
+    
+    max_val = np.max(np.abs(chaos_seq))
+    if max_val > 0:
+        chaos_seq /= max_val
+
+    return chaos_seq
+
+# ---------------------------------------------------------------------------------
+# Haar Discrete Wavelet Transform (DWT)
+def haar_dwt(signal):
+    coeffs = pywt.wavedec(signal, 'haar', level=1)
+    dwt_signal = np.concatenate(coeffs)
+    return np.nan_to_num(dwt_signal)  
+
+# ---------------------------------------------------------------------------------
+# Chaotic Permutation
+def chaotic_permutation(signal, chaos_seq):
+    permuted_signal = np.zeros_like(signal)
+    if chaos_seq[0] > 0:
+        permuted_signal[:] = signal[::-1]  # Full reverse
+    else:
+        half = len(signal) // 2
+        permuted_signal[:half] = signal[half-1::-1]  
+        permuted_signal[half:] = signal[:half-1:-1]  
+    return permuted_signal
+
+# ---------------------------------------------------------------------------------
+# Encryption Function
+def encrypt_speech(signal):
+    if len(signal) == 0:
+        print("Error: Empty input signal!")
+        return np.array([])  
+    
+    dwt_signal = haar_dwt(signal)
+    chaos_seq = generate_chen_chaos(len(dwt_signal))
+
+    if len(dwt_signal) == len(chaos_seq):
+        multiplied_signal = dwt_signal * chaos_seq
+        encrypted_signal = chaotic_permutation(multiplied_signal, chaos_seq)
+    else:
+        print("Error: Length mismatch between signals!")
+        return np.array([])
+
+    max_val = np.max(np.abs(encrypted_signal))
+    if max_val > 0:
+        encrypted_signal /= max_val  
+
+    return encrypted_signal
+
+# ---------------------------------------------------------------------------------
+# Auto-Correlation Function
+def auto_correlation(signal):
+    return np.correlate(signal, signal, mode='full')[len(signal)-1:]
+
+# ---------------------------------------------------------------------------------
+# Correlation Coefficient Calculation
+def correlation_coefficient(original, encrypted):
+    mean_original = np.mean(original)
+    mean_encrypted = np.mean(encrypted)
+    
+    numerator = np.sum((original - mean_original) * (encrypted - mean_encrypted))
+    denominator = np.sqrt(np.sum((original - mean_original) ** 2) * np.sum((encrypted - mean_encrypted) ** 2))
+    
+    return numerator / denominator if denominator != 0 else 0
+
+# ---------------------------------------------------------------------------------
+# Plot Auto-Correlation Analysis
+def plot_auto_correlation(original, encrypted):
+    original_corr = auto_correlation(original)
+    encrypted_corr = auto_correlation(encrypted)
+
+    plt.figure(figsize=(12, 5))
+
+    # Original Signal Auto-Correlation
+    plt.subplot(1, 2, 1)
+    plt.plot(original_corr, color='b')
+    plt.title('(a) Original Signal Auto-Correlation')
+    plt.xlabel('Lag')
+    plt.ylabel('Correlation')
+
+    # Encrypted Signal Auto-Correlation
+    plt.subplot(1, 2, 2)
+    plt.plot(encrypted_corr, color='r')
+    plt.title('(b) Encrypted Signal Auto-Correlation')
+    plt.xlabel('Lag')
+
+    plt.suptitle('Figure: Proposed Cryptosystem - Auto-Correlation Analysis')
+    plt.tight_layout()
+    plt.show()
+
+# ---------------------------------------------------------------------------------
+# Run the Analysis
+filename = r"C:\Users\Kavinesh\Downloads\speech-94649.wav"  # Update your file path
+rate, original_signal = load_audio(filename)
+
+if original_signal is not None:
+    subset_length = len(original_signal) // 2
+    original_subset = original_signal[:subset_length]
+    encrypted_signal = encrypt_speech(original_subset)
+    
+    if len(encrypted_signal) > 0:
+        plot_auto_correlation(original_subset, encrypted_signal)
+        
+        # Compute and Display Correlation Coefficient
+        cc_value = correlation_coefficient(original_subset, encrypted_signal)
+        print(f"Correlation Coefficient (Original vs. Encrypted): {cc_value:.4f}")
+    else:
+        print("Encryption failed!")
+else:
+    print("Failed to load audio.")

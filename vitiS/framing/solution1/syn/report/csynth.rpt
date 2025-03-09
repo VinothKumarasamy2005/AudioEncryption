@@ -1,0 +1,122 @@
+
+
+================================================================
+== Synthesis Summary Report of 'framing'
+================================================================
++ General Information: 
+    * Date:           Tue Feb 11 17:35:59 2025
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        framing
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a100t-csg324-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+----------+-----+
+    |       Modules      | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |           |          |     |
+    |       & Loops      | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT   | URAM|
+    +--------------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+----------+-----+
+    |+ framing           |     -|  5.30|        -|       -|         -|        -|     -|        no|     -|   -|  167 (~0%)|  755 (1%)|    -|
+    | o VITIS_LOOP_21_1  |     -|  7.30|        -|       -|       129|        -|     -|        no|     -|   -|          -|         -|    -|
+    +--------------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+
+| Interface     | Data Width | Address Width |
++---------------+------------+---------------+
+| s_axi_control | 32         | 4             |
++---------------+------------+---------------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++---------------+-----------+---------------+-------+--------+--------+
+| Interface     | Direction | Register Mode | TDATA | TREADY | TVALID |
++---------------+-----------+---------------+-------+--------+--------+
+| input_signal  | in        | both          | 32    | 1      | 1      |
+| output_frames | out       | both          | 32    | 1      | 1      |
++---------------+-----------+---------------+-------+--------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------+-----------+-------------------------------------------------+
+| Argument      | Direction | Datatype                                        |
++---------------+-----------+-------------------------------------------------+
+| input_signal  | in        | stream<ap_fixed<32, 8, AP_TRN, AP_WRAP, 0>, 0>& |
+| output_frames | out       | stream<ap_fixed<32, 8, AP_TRN, AP_WRAP, 0>, 0>& |
++---------------+-----------+-------------------------------------------------+
+
+* SW-to-HW Mapping
++---------------+---------------+-----------+
+| Argument      | HW Interface  | HW Type   |
++---------------+---------------+-----------+
+| input_signal  | input_signal  | interface |
+| output_frames | output_frames | interface |
++---------------+---------------+-----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+
+================================================================
+== Bind Op Report
+================================================================
+  No bind op info in design
+
+================================================================
+== Storage Report
+================================================================
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |           |           |      |      |        |          |      |         | Banks            |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + framing         |           |           | 0    | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+-------------------------+--------------------------------------------------+
+| Type      | Options                 | Location                                         |
++-----------+-------------------------+--------------------------------------------------+
+| interface | axis port=input_signal  | framing/framing.cpp:14 in framing, input_signal  |
+| interface | axis port=output_frames | framing/framing.cpp:15 in framing, output_frames |
+| interface | s_axilite port=return   | framing/framing.cpp:16 in framing, return        |
+| pipeline  |                         | framing/framing.cpp:17 in framing                |
++-----------+-------------------------+--------------------------------------------------+
+
+

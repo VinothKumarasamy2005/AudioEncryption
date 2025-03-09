@@ -1,0 +1,114 @@
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 93, Column: 0 }
+Function:        _Z10encryfinalPKiPd
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'haarDWT4(int const*, double*)'
+    DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 39, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'encryfinal(int const*, double*)'
+    DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 93, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 93, Column: 0 }
+Function:        _Z10encryfinalPKiPd
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'multiplySignals(double const*, double const*, double*)'
+    DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 85, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'encryfinal(int const*, double*)'
+    DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 93, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 93, Column: 0 }
+Function:        _Z10encryfinalPKiPd
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'chaoticPermutation(double const*, double*, double*)'
+    DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 58, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'encryfinal(int const*, double*)'
+    DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 93, Column: 0 }
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-occurrence-inference
+Name:            NonComputableLoopForm
+DebugLoc:        { File: encrymodify/encryfinal.cpp, Line: 44, Column: 22 }
+Function:        _Z10encryfinalPKiPd
+Args:            
+  - String:          'Could not analyze occurrence information within '''
+  - LoopName:        VITIS_LOOP_44_2
+  - String:          '''('
+  - LoopLoc:         'encrymodify/encryfinal.cpp:44:22'
+  - String:          ') . Requires loop in simplify form and with single exit.'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_40_1
+  - String:          '> at '
+  - LoopLoc:         'encrymodify/encryfinal.cpp:40:22'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_50_4
+  - String:          '> at '
+  - LoopLoc:         'encrymodify/encryfinal.cpp:50:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_46_3
+  - String:          '> at '
+  - LoopLoc:         'encrymodify/encryfinal.cpp:46:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_86_1
+  - String:          '> at '
+  - LoopLoc:         'encrymodify/encryfinal.cpp:86:22'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_64_1
+  - String:          '> at '
+  - LoopLoc:         'encrymodify/encryfinal.cpp:64:26'
+  - String:          ' '
+...

@@ -1,0 +1,11 @@
+{
+  "0": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "framing.cpp",
+    "fileloc": 12,
+    "instructions": 266,
+    "name": "framing",
+    "total_instructions": 266
+  }
+}

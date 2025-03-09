@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AdditionalInfo>
+  <CTypeInfo>
+      <RtlPort>
+        <name>encryptedSignal_address0</name>
+        <type>Unsigned</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>encryptedSignal_ce0</name>
+        <type>bool</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>encryptedSignal_d0</name>
+        <type>Floating-point</type>
+        <fractionWidth>53</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>encryptedSignal_we0</name>
+        <type>bool</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>speechSignal_address0</name>
+        <type>Unsigned</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>speechSignal_ce0</name>
+        <type>bool</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>speechSignal_q0</name>
+        <type>Signed</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+  </CTypeInfo>
+  <DesignConstraint>
+    <clk_period>10</clk_period>
+  </DesignConstraint>
+  <Machine>64</Machine>
+  <modelParameters>
+    <combinational>0</combinational>
+    <latency>474</latency>
+    <II>475 ~ 3221225919</II>
+  </modelParameters>
+</AdditionalInfo>

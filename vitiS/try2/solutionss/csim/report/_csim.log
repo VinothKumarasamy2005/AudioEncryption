@@ -1,0 +1,11 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../test_hyperchaos.cpp in debug mode
+csim.mk:79: recipe for target 'obj/test_hyperchaos.o' failed
+../../../../test_hyperchaos.cpp:1:29: fatal error: chen_hyperchaos.h: No such file or directory
+ #include "chen_hyperchaos.h"
+                             ^
+compilation terminated.
+make: *** [obj/test_hyperchaos.o] Error 1
+ERR: [SIM 100] CSim file generation failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

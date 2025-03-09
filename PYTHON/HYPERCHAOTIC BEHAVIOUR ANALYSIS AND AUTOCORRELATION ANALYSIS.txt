@@ -1,0 +1,60 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define simulation parameters
+DT = 0.001  # Reduced time step for better stability
+T = 100  # Shorter total time to prevent excessive growth
+N = int(T / DT)  # Number of steps
+
+# Chen's Hyperchaotic System Parameters
+alpha, gamm, epsilon, sigma, beta = 36.0, 28.0, 0.2, 16.0, 3.0
+
+# Initialize arrays
+x, y, z, w = np.zeros(N), np.zeros(N), np.zeros(N), np.zeros(N)
+
+# Initial conditions
+x[0], y[0], z[0], w[0] = 0.1, 0.1, 0.1, 0.1  # Avoid 0 to prevent trivial solutions
+
+# Solve using Forward Euler Method
+for i in range(N - 1):
+    dx = alpha * (y[i] - x[i])
+    dy = sigma * x[i] - x[i] * z[i] + gamm * y[i] - w[i]
+    dz = x[i] * y[i] - beta * z[i]
+    dw = x[i] - epsilon
+
+    # Update values with stability checks
+    x[i + 1] = np.clip(x[i] + dx * DT, -1e5, 1e5)  # Prevent runaway values
+    y[i + 1] = np.clip(y[i] + dy * DT, -1e5, 1e5)
+    z[i + 1] = np.clip(z[i] + dz * DT, -1e5, 1e5)
+    w[i + 1] = np.clip(w[i] + dw * DT, -1e5, 1e5)
+
+# Function to compute normalized auto-correlation
+def autocorr(signal):
+    return np.correlate(signal - np.mean(signal), signal - np.mean(signal), mode='full') / np.var(signal) / len(signal)
+
+# Compute auto-correlation
+autocorr_x = autocorr(x)
+autocorr_y = autocorr(y)
+autocorr_z = autocorr(z)
+autocorr_w = autocorr(w)
+lags = np.arange(-N + 1, N)
+
+# Plot results
+fig, axes = plt.subplots(2, 2, figsize=(10, 8))
+
+axes[0, 0].plot(lags, autocorr_x)
+axes[0, 0].set_title("(a) x")
+axes[0, 1].plot(lags, autocorr_y)
+axes[0, 1].set_title("(b) y")
+axes[1, 0].plot(lags, autocorr_z)
+axes[1, 0].set_title("(c) z")
+axes[1, 1].plot(lags, autocorr_w)
+axes[1, 1].set_title("(d) w")
+
+for ax in axes.flat:
+    ax.set_xlim([-N//2, N//2])
+    ax.grid()
+
+plt.suptitle("Fixed Hyperchaotic Auto-Correlation Analysis")
+plt.tight_layout()
+plt.show()

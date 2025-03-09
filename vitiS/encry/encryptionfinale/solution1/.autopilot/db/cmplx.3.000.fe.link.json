@@ -1,0 +1,68 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "2 1 4 3",
+    "file": "chaotic_encrypt.cpp",
+    "fileloc": 93,
+    "instructions": 27,
+    "name": "encryfinal",
+    "total_instructions": 251
+  },
+  "1": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "chaotic_encrypt.cpp",
+    "fileloc": 16,
+    "instructions": 53,
+    "name": "generateChen4DSequence",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 53
+  },
+  "2": {
+    "basicblocks": 25,
+    "calls": "",
+    "file": "chaotic_encrypt.cpp",
+    "fileloc": 39,
+    "instructions": 90,
+    "loads": {
+      "L": 6
+    },
+    "name": "haarDWT4",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 90
+  },
+  "3": {
+    "basicblocks": 22,
+    "calls": "",
+    "file": "chaotic_encrypt.cpp",
+    "fileloc": 58,
+    "instructions": 61,
+    "loads": {
+      "L": 4
+    },
+    "name": "chaoticPermutation",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 61
+  },
+  "4": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "chaotic_encrypt.cpp",
+    "fileloc": 85,
+    "instructions": 20,
+    "loads": {
+      "L": 2
+    },
+    "name": "multiplySignals",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 20
+  }
+}

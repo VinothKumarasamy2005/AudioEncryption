@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="main_hyperchaos.cpp" path="C:\Windows\vitiS\main_hyperchaos.cpp"/>
+    <originFiles name="chen_hype.h" path="C:\Windows\vitiS\chensystemtrial\chen_hype.h"/>
+  </source>
+  <testbench>
+    <originFiles name="test_hyperchaos.cpp" path="C:\Windows\vitiS\test_hyperchaos.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

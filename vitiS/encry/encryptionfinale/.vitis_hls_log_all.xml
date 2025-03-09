@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'encryfinal_Pipeline_VITIS_LOOP_46_3' (loop 'VITIS_LOOP_46_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation 0 bit ('temp_addr_1_write_ln48', encryptionfinale/chaotic_encrypt.cpp:48->encryptionfinale/chaotic_encrypt.cpp:99) of variable 'div28_i', encryptionfinale/chaotic_encrypt.cpp:48->encryptionfinale/chaotic_encrypt.cpp:99 on array 'temp' and 'store' operation 0 bit ('temp_addr_write_ln47', encryptionfinale/chaotic_encrypt.cpp:47->encryptionfinale/chaotic_encrypt.cpp:99) of variable 'div18_i', encryptionfinale/chaotic_encrypt.cpp:47->encryptionfinale/chaotic_encrypt.cpp:99 on array 'temp'.&#xD;&#xA;Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-880.html" projectName="encryptionfinale" solutionName="solution1" date="2025-02-06T20:26:39.416+0530" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 1 for loop 'VITIS_LOOP_46_3' (encryptionfinale/chaotic_encrypt.cpp:46:35) in function 'encryfinal'." projectName="encryptionfinale" solutionName="solution1" date="2025-02-06T20:26:38.187+0530" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 2 for loop 'VITIS_LOOP_50_4' (encryptionfinale/chaotic_encrypt.cpp:50:35) in function 'encryfinal'." projectName="encryptionfinale" solutionName="solution1" date="2025-02-06T20:26:38.018+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'encryfinal_sitodp_32ns_64_6_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="encryptionfinale" solutionName="solution1" date="2025-02-06T20:30:37.100+0530" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'encryfinal_dmul_64ns_64ns_64_7_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="encryptionfinale" solutionName="solution1" date="2025-02-06T20:30:31.061+0530" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'encryfinal_ddiv_64ns_64ns_64_59_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="encryptionfinale" solutionName="solution1" date="2025-02-06T20:30:23.006+0530" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'encryfinal_dadddsub_64ns_64ns_64_8_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;&#xD;&#xA;create_ip: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 577.105 ; gain = 20.895&#xD;" projectName="encryptionfinale" solutionName="solution1" date="2025-02-06T20:30:16.965+0530" type="Warning"/>
+      </packageLog>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

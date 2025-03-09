@@ -1,0 +1,20 @@
+{
+  "0": {
+    "basicblocks": 20,
+    "calls": "",
+    "file": "encryfinal.cpp",
+    "fileloc": 93,
+    "instructions": 98,
+    "loads": {
+      "G": 1,
+      "L": 5,
+      "T": 1
+    },
+    "name": "encryfinal",
+    "stores": {
+      "L": 6,
+      "T": 1
+    },
+    "total_instructions": 98
+  }
+}

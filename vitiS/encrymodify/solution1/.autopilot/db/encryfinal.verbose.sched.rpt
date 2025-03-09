@@ -1,0 +1,221 @@
+
+
+================================================================
+== Vitis HLS Report for 'encryfinal'
+================================================================
+* Date:           Thu Feb 13 18:45:44 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        encrymodify
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a100t-csg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.826 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+------------+----------+------------+-----+------------+---------+
+    |   Latency (cycles)   |   Latency (absolute)  |     Interval     | Pipeline|
+    |   min   |     max    |    min   |     max    | min |     max    |   Type  |
+    +---------+------------+----------+------------+-----+------------+---------+
+    |      474|  3221225918|  4.740 us|  32.212 sec|  475|  3221225919|       no|
+    +---------+------------+----------+------------+-----+------------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+------------+-----------------+-----------+-----------+------+----------+
+        |                   |   Latency (cycles)   |    Iteration    |  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |     max    |     Latency     |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+------------+-----------------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_44_2  |      400|  3221225844|  100 ~ 805306461|          -|          -|     4|        no|
+        +-------------------+---------+------------+-----------------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 9 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 3 
+9 --> 10 
+10 --> 11 
+11 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.61>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%step = alloca i32 1" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 12 'alloca' 'step' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%temp = alloca i64 1" [encrymodify/encryfinal.cpp:45->encrymodify/encryfinal.cpp:107]   --->   Operation 13 'alloca' 'temp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%transformedSignal = alloca i64 1" [encrymodify/encryfinal.cpp:102]   --->   Operation 14 'alloca' 'transformedSignal' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%multipliedSignal = alloca i64 1" [encrymodify/encryfinal.cpp:104]   --->   Operation 15 'alloca' 'multipliedSignal' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [2/2] (0.00ns)   --->   "%call_ln0 = call void @encryfinal_Pipeline_VITIS_LOOP_40_1, i32 %speechSignal, i64 %transformedSignal"   --->   Operation 16 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 17 [1/1] (1.61ns)   --->   "%store_ln44 = store i25 16, i25 %step" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 17 'store' 'store_ln44' <Predicate = true> <Delay = 1.61>
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%spectopmodule_ln93 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_4" [encrymodify/encryfinal.cpp:93]   --->   Operation 18 'spectopmodule' 'spectopmodule_ln93' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%empty = specmemcore i32 @_ssdm_op_SpecMemCore, i32 %speechSignal, i32 666, i32 17, i32 4294967295"   --->   Operation 19 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %speechSignal, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_2, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %speechSignal"   --->   Operation 21 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%empty_17 = specmemcore i32 @_ssdm_op_SpecMemCore, i64 %encryptedSignal, i32 666, i32 17, i32 4294967295"   --->   Operation 22 'specmemcore' 'empty_17' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %encryptedSignal, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_3, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %encryptedSignal"   --->   Operation 24 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/2] (0.00ns)   --->   "%call_ln0 = call void @encryfinal_Pipeline_VITIS_LOOP_40_1, i32 %speechSignal, i64 %transformedSignal"   --->   Operation 26 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln44 = br void %for.cond3.i" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 27 'br' 'br_ln44' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.42>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%step_1 = load i25 %step" [encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107]   --->   Operation 28 'load' 'step_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%tmp = partselect i24 @_ssdm_op_PartSelect.i24.i25.i32.i32, i25 %step_1, i32 1, i32 24" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 29 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (2.42ns)   --->   "%icmp_ln44 = icmp_eq  i24 %tmp, i24 0" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 30 'icmp' 'icmp_ln44' <Predicate = true> <Delay = 2.42> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%br_ln44 = br i1 %icmp_ln44, void %for.body6.i, void %for.inc.i5.preheader" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 31 'br' 'br_ln44' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [2/2] (0.00ns)   --->   "%call_ln0 = call void @encryfinal_Pipeline_2, i64 %temp"   --->   Operation 32 'call' 'call_ln0' <Predicate = (!icmp_ln44)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 33 [2/2] (0.00ns)   --->   "%call_ln0 = call void @encryfinal_Pipeline_VITIS_LOOP_86_1, i64 %transformedSignal, i64 %multipliedSignal, i64 %chaoticSequence"   --->   Operation 33 'call' 'call_ln0' <Predicate = (icmp_ln44)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 34 [1/2] (0.00ns)   --->   "%call_ln0 = call void @encryfinal_Pipeline_2, i64 %temp"   --->   Operation 34 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 2.45>
+ST_5 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln46 = zext i24 %tmp" [encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107]   --->   Operation 35 'zext' 'zext_ln46' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 36 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i4 @_ssdm_op_PartSelect.i4.i25.i32.i32, i25 %step_1, i32 1, i32 4" [encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107]   --->   Operation 36 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 37 [2/2] (2.45ns)   --->   "%call_ln46 = call void @encryfinal_Pipeline_VITIS_LOOP_46_3, i25 %zext_ln46, i64 %transformedSignal, i64 %temp, i4 %trunc_ln" [encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107]   --->   Operation 37 'call' 'call_ln46' <Predicate = true> <Delay = 2.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 38 [1/1] (1.61ns)   --->   "%store_ln44 = store i25 %zext_ln46, i25 %step" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 38 'store' 'store_ln44' <Predicate = true> <Delay = 1.61>
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 39 [1/2] (0.00ns)   --->   "%call_ln46 = call void @encryfinal_Pipeline_VITIS_LOOP_46_3, i25 %zext_ln46, i64 %transformedSignal, i64 %temp, i4 %trunc_ln" [encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107]   --->   Operation 39 'call' 'call_ln46' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 4.06>
+ST_7 : Operation 40 [2/2] (4.06ns)   --->   "%call_ln46 = call void @encryfinal_Pipeline_VITIS_LOOP_50_4, i25 %step_1, i64 %temp, i64 %transformedSignal" [encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107]   --->   Operation 40 'call' 'call_ln46' <Predicate = true> <Delay = 4.06> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 41 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 41 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 42 [1/1] (0.00ns)   --->   "%specloopname_ln44 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 42 'specloopname' 'specloopname_ln44' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 43 [1/2] (0.00ns)   --->   "%call_ln46 = call void @encryfinal_Pipeline_VITIS_LOOP_50_4, i25 %step_1, i64 %temp, i64 %transformedSignal" [encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107]   --->   Operation 43 'call' 'call_ln46' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 44 [1/1] (0.00ns)   --->   "%br_ln44 = br void %for.cond3.i" [encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107]   --->   Operation 44 'br' 'br_ln44' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 3> <Delay = 0.00>
+ST_9 : Operation 45 [1/2] (0.00ns)   --->   "%call_ln0 = call void @encryfinal_Pipeline_VITIS_LOOP_86_1, i64 %transformedSignal, i64 %multipliedSignal, i64 %chaoticSequence"   --->   Operation 45 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 4> <Delay = 0.00>
+ST_10 : Operation 46 [2/2] (0.00ns)   --->   "%call_ln0 = call void @encryfinal_Pipeline_VITIS_LOOP_64_1, i64 %multipliedSignal, i64 %encryptedSignal"   --->   Operation 46 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 5> <Delay = 0.00>
+ST_11 : Operation 47 [1/2] (0.00ns)   --->   "%call_ln0 = call void @encryfinal_Pipeline_VITIS_LOOP_64_1, i64 %multipliedSignal, i64 %encryptedSignal"   --->   Operation 47 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 48 [1/1] (0.00ns)   --->   "%ret_ln117 = ret" [encrymodify/encryfinal.cpp:117]   --->   Operation 48 'ret' 'ret_ln117' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.610ns
+The critical path consists of the following:
+	'alloca' operation 25 bit ('step', encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107) [4]  (0.000 ns)
+	'store' operation 0 bit ('store_ln44', encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107) of constant 16 on local variable 'step', encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107 [17]  (1.610 ns)
+
+ <State 2>: 0.000ns
+The critical path consists of the following:
+
+ <State 3>: 2.424ns
+The critical path consists of the following:
+	'load' operation 25 bit ('step', encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107) on local variable 'step', encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107 [20]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln44', encrymodify/encryfinal.cpp:44->encrymodify/encryfinal.cpp:107) [22]  (2.424 ns)
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 2.459ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln46', encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107) to 'encryfinal_Pipeline_VITIS_LOOP_46_3' [30]  (2.459 ns)
+
+ <State 6>: 0.000ns
+The critical path consists of the following:
+
+ <State 7>: 4.069ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln46', encrymodify/encryfinal.cpp:46->encrymodify/encryfinal.cpp:107) to 'encryfinal_Pipeline_VITIS_LOOP_50_4' [31]  (4.069 ns)
+
+ <State 8>: 0.000ns
+The critical path consists of the following:
+
+ <State 9>: 0.000ns
+The critical path consists of the following:
+
+ <State 10>: 0.000ns
+The critical path consists of the following:
+
+ <State 11>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

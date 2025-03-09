@@ -1,0 +1,33 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Windows/vitiS/framing/solution1/csynth.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="framing" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=framing" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="framing/framing.cpp:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="framing" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=input_signal" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="framing/framing.cpp:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="framing" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port=output_frames" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="framing/framing.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="framing" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="framing/framing.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="framing" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="framing/framing.cpp:21:22" msg_body="Loop 'VITIS_LOOP_21_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_21_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="framing/framing.cpp:22:26" msg_body="Loop 'VITIS_LOOP_22_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_22_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="framing/framing.cpp:25:26" msg_body="Loop 'VITIS_LOOP_25_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_25_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="framing/framing.cpp:13:0" msg_body="Unrolling loop 'VITIS_LOOP_22_2' (framing/framing.cpp:22:26) in function 'framing' completely with a factor of 128">
+        <args Factor="128" LoopLoc="framing/framing.cpp:22:26" LoopName="VITIS_LOOP_22_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="framing/framing.cpp:13:0" msg_body="Unrolling loop 'VITIS_LOOP_25_3' (framing/framing.cpp:25:26) in function 'framing' completely with a factor of 128">
+        <args Factor="128" LoopLoc="framing/framing.cpp:25:26" LoopName="VITIS_LOOP_25_3"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

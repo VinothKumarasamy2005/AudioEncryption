@@ -1,0 +1,145 @@
+
+
+================================================================
+== Synthesis Summary Report of 'chensy'
+================================================================
++ General Information: 
+    * Date:           Sun Feb  2 20:37:43 2025
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        rinos
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a100t-csg324-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |       Modules      |  Issue |       | Latency | Latency| Iteration|         | Trip |          |      |        |           |           |     |
+    |       & Loops      |  Type  | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP  |     FF    |    LUT    | URAM|
+    +--------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |+ chensy            |  Timing|  -4.41|        -|       -|         -|        -|     -|        no|     -|  8 (3%)|  1684 (1%)|  1843 (2%)|    -|
+    | o VITIS_LOOP_12_1  |      II|   7.30|        -|       -|        27|       21|     -|       yes|     -|       -|          -|          -|    -|
+    +--------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++----------------+---------+-----------+----------+
+| Port           | Mode    | Direction | Bitwidth |
++----------------+---------+-----------+----------+
+| alpha          | ap_none | in        | 32       |
+| beta           | ap_none | in        | 32       |
+| dt             | ap_none | in        | 32       |
+| epsilon        | ap_none | in        | 32       |
+| gamma          | ap_none | in        | 32       |
+| num_iterations | ap_none | in        | 32       |
+| sigma          | ap_none | in        | 32       |
+| w_out          | ap_vld  | out       | 32       |
+| x_out          | ap_vld  | out       | 32       |
+| y_out          | ap_vld  | out       | 32       |
+| z_out          | ap_vld  | out       | 32       |
++----------------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------------+-----------+----------+
+| Argument       | Direction | Datatype |
++----------------+-----------+----------+
+| dt             | in        | float    |
+| num_iterations | in        | int      |
+| alpha          | in        | float    |
+| sigma          | in        | float    |
+| beta           | in        | float    |
+| gamma          | in        | float    |
+| epsilon        | in        | float    |
+| x_out          | out       | float*   |
+| y_out          | out       | float*   |
+| z_out          | out       | float*   |
+| w_out          | out       | float*   |
++----------------+-----------+----------+
+
+* SW-to-HW Mapping
++----------------+----------------+---------+
+| Argument       | HW Interface   | HW Type |
++----------------+----------------+---------+
+| dt             | dt             | port    |
+| num_iterations | num_iterations | port    |
+| alpha          | alpha          | port    |
+| sigma          | sigma          | port    |
+| beta           | beta           | port    |
+| gamma          | gamma          | port    |
+| epsilon        | epsilon        | port    |
+| x_out          | x_out          | port    |
+| x_out          | x_out_ap_vld   | port    |
+| y_out          | y_out          | port    |
+| y_out          | y_out_ap_vld   | port    |
+| z_out          | z_out          | port    |
+| z_out          | z_out_ap_vld   | port    |
+| w_out          | w_out          | port    |
+| w_out          | w_out_ap_vld   | port    |
++----------------+----------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------+-----+--------+----------+------+---------+---------+
+| Name                                    | DSP | Pragma | Variable | Op   | Impl    | Latency |
++-----------------------------------------+-----+--------+----------+------+---------+---------+
+| + chensy                                | 8   |        |          |      |         |         |
+|   add_ln12_fu_251_p2                    |     |        | add_ln12 | add  | fabric  | 0       |
+|   faddfsub_32ns_32ns_32_6_no_dsp_1_U2   |     |        | sub      | fsub | fabric  | 5       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U4      | 3   |        | dx       | fmul | maxdsp  | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U4      | 3   |        | mul1     | fmul | maxdsp  | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U5      | 3   |        | mul2     | fmul | maxdsp  | 3       |
+|   faddfsub_32ns_32ns_32_6_no_dsp_1_U2   |     |        | sub3     | fsub | fabric  | 5       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U4      | 3   |        | mul4     | fmul | maxdsp  | 3       |
+|   faddfsub_32ns_32ns_32_6_no_dsp_1_U2   |     |        | add      | fsub | fabric  | 5       |
+|   faddfsub_32ns_32ns_32_6_no_dsp_1_U2   |     |        | dy       | fsub | fabric  | 5       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U5      | 3   |        | mul6     | fmul | maxdsp  | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U4      | 3   |        | mul7     | fmul | maxdsp  | 3       |
+|   faddfsub_32ns_32ns_32_6_no_dsp_1_U3   |     |        | dz       | fsub | fabric  | 5       |
+|   faddfsub_32ns_32ns_32_7_full_dsp_1_U1 | 2   |        | dw       | fsub | fulldsp | 6       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U4      | 3   |        | mul      | fmul | maxdsp  | 3       |
+|   faddfsub_32ns_32ns_32_6_no_dsp_1_U2   |     |        | x_1      | fsub | fabric  | 5       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U4      | 3   |        | mul3     | fmul | maxdsp  | 3       |
+|   faddfsub_32ns_32ns_32_6_no_dsp_1_U2   |     |        | y_1      | fsub | fabric  | 5       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U5      | 3   |        | mul5     | fmul | maxdsp  | 3       |
+|   faddfsub_32ns_32ns_32_6_no_dsp_1_U3   |     |        | z_1      | fsub | fabric  | 5       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U4      | 3   |        | mul8     | fmul | maxdsp  | 3       |
+|   faddfsub_32ns_32ns_32_7_full_dsp_1_U1 | 2   |        | w_1      | fsub | fulldsp | 6       |
++-----------------------------------------+-----+--------+----------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+-----------------------------+
+| Type     | Options | Location                    |
++----------+---------+-----------------------------+
+| pipeline | II=1    | rinos/chen.cpp:13 in chensy |
++----------+---------+-----------------------------+
+
+

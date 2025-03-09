@@ -1,0 +1,85 @@
+---
+MainSourceFile:  'C:/Windows/vitiS/encry/encryptionfinale/solution1/.autopilot/db/chaotic_encrypt.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_19_1:  '
+    FileOffset:      19
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          805683
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_19_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_40_1:  '
+    FileOffset:      40
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          806206
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_40_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_44_2:  '
+    FileOffset:      44
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          806300
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_44_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_46_3:  '
+    FileOffset:      46
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          806384
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_46_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_50_4:  '
+    FileOffset:      50
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          806592
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_50_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_64_1:  '
+    FileOffset:      64
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          806874
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_64_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_72_2:  '
+    FileOffset:      72
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          807026
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_72_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_77_3:  '
+    FileOffset:      77
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          807136
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_77_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_86_1:  '
+    FileOffset:      86
+    FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\chaotic_encrypt.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\encry\encryptionfinale\solution1\.autopilot\db\chaotic_encrypt.pp.0.cpp'
+        Offset:          807369
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_86_1: '
+...

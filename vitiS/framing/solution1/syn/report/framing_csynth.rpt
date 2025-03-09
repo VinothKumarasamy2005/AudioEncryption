@@ -1,0 +1,159 @@
+
+
+================================================================
+== Vitis HLS Report for 'framing'
+================================================================
+* Date:           Tue Feb 11 17:35:58 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        framing
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a100t-csg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.000 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_21_1  |        ?|        ?|       129|          -|          -|     ?|        no|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      8|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|    -|      36|     40|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    707|    -|
+|Register         |        -|    -|     131|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     167|    755|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      270|  240|  126800|  63400|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------+---------------+---------+----+----+----+-----+
+    |     Instance    |     Module    | BRAM_18K| DSP| FF | LUT| URAM|
+    +-----------------+---------------+---------+----+----+----+-----+
+    |control_s_axi_U  |control_s_axi  |        0|   0|  36|  40|    0|
+    +-----------------+---------------+---------+----+----+----+-----+
+    |Total            |               |        0|   0|  36|  40|    0|
+    +-----------------+---------------+---------+----+----+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+----+---+----+------------+------------+
+    |ap_block_state130_io    |       and|   0|  0|   2|           1|           1|
+    |grp_nbreadreq_fu_40_p3  |       and|   0|  0|   2|           1|           0|
+    |ap_block_state10        |        or|   0|  0|   2|           1|           1|
+    |ap_block_state130       |        or|   0|  0|   2|           1|           1|
+    +------------------------+----------+----+---+----+------------+------------+
+    |Total                   |          |   0|  0|   8|           4|           3|
+    +------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------+-----+-----------+-----+-----------+
+    |            Name           | LUT | Input Size| Bits| Total Bits|
+    +---------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                  |  689|        131|    1|        131|
+    |input_signal_TDATA_blk_n   |    9|          2|    1|          2|
+    |output_frames_TDATA_blk_n  |    9|          2|    1|          2|
+    +---------------------------+-----+-----------+-----+-----------+
+    |Total                      |  707|        135|    3|        135|
+    +---------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +------------+-----+----+-----+-----------+
+    |    Name    |  FF | LUT| Bits| Const Bits|
+    +------------+-----+----+-----+-----------+
+    |ap_CS_fsm   |  130|   0|  130|          0|
+    |tmp_reg_67  |    1|   0|    1|          0|
+    +------------+-----+----+-----+-----------+
+    |Total       |  131|   0|  131|          0|
+    +------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+---------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++-----------------------+-----+-----+------------+---------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|        control|   return void|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|        control|   return void|
+|s_axi_control_AWADDR   |   in|    4|       s_axi|        control|   return void|
+|s_axi_control_WVALID   |   in|    1|       s_axi|        control|   return void|
+|s_axi_control_WREADY   |  out|    1|       s_axi|        control|   return void|
+|s_axi_control_WDATA    |   in|   32|       s_axi|        control|   return void|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|        control|   return void|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|        control|   return void|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|        control|   return void|
+|s_axi_control_ARADDR   |   in|    4|       s_axi|        control|   return void|
+|s_axi_control_RVALID   |  out|    1|       s_axi|        control|   return void|
+|s_axi_control_RREADY   |   in|    1|       s_axi|        control|   return void|
+|s_axi_control_RDATA    |  out|   32|       s_axi|        control|   return void|
+|s_axi_control_RRESP    |  out|    2|       s_axi|        control|   return void|
+|s_axi_control_BVALID   |  out|    1|       s_axi|        control|   return void|
+|s_axi_control_BREADY   |   in|    1|       s_axi|        control|   return void|
+|s_axi_control_BRESP    |  out|    2|       s_axi|        control|   return void|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|        framing|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|        framing|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|        framing|  return value|
+|input_signal_TDATA     |   in|   32|        axis|   input_signal|       pointer|
+|input_signal_TVALID    |   in|    1|        axis|   input_signal|       pointer|
+|input_signal_TREADY    |  out|    1|        axis|   input_signal|       pointer|
+|output_frames_TDATA    |  out|   32|        axis|  output_frames|       pointer|
+|output_frames_TVALID   |  out|    1|        axis|  output_frames|       pointer|
+|output_frames_TREADY   |   in|    1|        axis|  output_frames|       pointer|
++-----------------------+-----+-----+------------+---------------+--------------+
+

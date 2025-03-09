@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [HLS 200-101] add_files: Too many positional arguments specified.&#xD;&#xA;SYNTAX &#xD;&#xA;  add_files &lt;src_files> [OPTIONS]&#xD;&#xA;    src_files : &lt;string>  (required)&#xD;&#xA;    -appendflags [=true|*false*]&#xD;&#xA;    -blackbox [=true|*false*]&#xD;&#xA;    -cflags &lt;string> &#xD;&#xA;    -csimflags &lt;string> &#xD;&#xA;    -tb [=true|*false*]&#xD;&#xA;&#xD;&#xA;SEE ALSO&#xD;&#xA;  INI: syn.blackbox.file syn.cflags syn.csimflags syn.file syn.file_cflags syn.file_csimflags tb.cflags tb.file tb.file_cflags&#xD;&#xA;  docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1399-vitis-hls&amp;resourceid=rpg1583259720879.html&#xD;&#xA;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;add_files ../../Users/Mohamed Rinos/Documents/chen_hyperchaos.cpp&quot;&#xD;&#xA;    (file &quot;C:/Windows/vitiS/chensystemtrial/solution1/csim.tcl&quot; line 8)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;source C:/Windows/vitiS/chensystemtrial/solution1/csim.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Windows/vitiS/chensystemtrial/solution1/csim.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$newargs&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 16)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc [info nameofexecutable] $argv&quot;" projectName="chensystemtrial" solutionName="solution1" date="2025-02-02T17:43:28.225+0530"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

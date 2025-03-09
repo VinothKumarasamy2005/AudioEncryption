@@ -1,0 +1,13 @@
+---
+MainSourceFile:  'C:/Windows/vitiS/rinos/solution1/.autopilot/db/chen.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_12_1:  '
+    FileOffset:      12
+    FilePath:        'C:\Windows\vitiS\rinos\chen.cpp'
+    Replacements:    
+      - FilePath:        'C:\Windows\vitiS\rinos\solution1\.autopilot\db\chen.pp.0.cpp'
+        Offset:          10292
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_12_1: '
+...

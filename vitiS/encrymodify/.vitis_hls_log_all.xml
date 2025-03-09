@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:45:47.416+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'encryfinal_Pipeline_VITIS_LOOP_46_3' (loop 'VITIS_LOOP_46_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation 0 bit ('temp_addr_1_write_ln48', encrymodify/encryfinal.cpp:48->encrymodify/encryfinal.cpp:107) of variable 'div28_i', encrymodify/encryfinal.cpp:48->encrymodify/encryfinal.cpp:107 on array 'temp' and 'store' operation 0 bit ('temp_addr_write_ln47', encrymodify/encryfinal.cpp:47->encrymodify/encryfinal.cpp:107) of variable 'div18_i', encrymodify/encryfinal.cpp:47->encrymodify/encryfinal.cpp:107 on array 'temp'.&#xD;&#xA;Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-880.html" projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:45:43.128+0530" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 1 for loop 'VITIS_LOOP_46_3' (encrymodify/encryfinal.cpp:46:35) in function 'encryfinal'." projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:45:41.954+0530" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Dropped interface mode 'bram' on 'encryptedSignal' as it is incompatible with its interface mode 's_axilite'." projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:45:41.796+0530" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Dropped interface mode 'bram' on 'speechSignal' as it is incompatible with its interface mode 's_axilite'." projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:45:41.761+0530" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 2 for loop 'VITIS_LOOP_50_4' (encrymodify/encryfinal.cpp:50:35) in function 'encryfinal'." projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:45:41.734+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'encryfinal_sitodp_32ns_64_6_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:48:06.417+0530" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'encryfinal_dmul_64ns_64ns_64_7_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:48:00.412+0530" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'encryfinal_ddiv_64ns_64ns_64_59_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;" projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:47:54.364+0530" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'encryfinal_dadddsub_64ns_64ns_64_8_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.&#xD;&#xD;&#xA;create_ip: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 576.762 ; gain = 20.625&#xD;" projectName="encrymodify" solutionName="solution1" date="2025-02-13T18:47:48.333+0530" type="Warning"/>
+      </packageLog>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

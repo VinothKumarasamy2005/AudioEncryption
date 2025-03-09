@@ -1,0 +1,10 @@
+<pragmas>
+<pragma file="framing/framing.cpp" line="17" pragmaType="pipeline" parentfunction="framing" off="0" ii="-1" style=""/>
+<pragma file="framing/framing.cpp" line="14" pragmaType="interface" parentfunction="framing" mode="axis" port="input_signal" register="0" register_mode="both" name="" depth="-1"/>
+<pragma file="framing/framing.cpp" line="15" pragmaType="interface" parentfunction="framing" mode="axis" port="output_frames" register="0" register_mode="both" name="" depth="-1"/>
+<pragma file="framing/framing.cpp" line="16" pragmaType="interface" parentfunction="framing" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="empty" off="0" region="0" recursive="0"/>
+</pragmas>

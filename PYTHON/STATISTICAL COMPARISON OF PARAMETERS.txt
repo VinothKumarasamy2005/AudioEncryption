@@ -1,0 +1,151 @@
+import numpy as np
+import scipy.io.wavfile as wav
+import pywt  # Haar DWT
+import pandas as pd  # Table formatting
+from scipy.stats import entropy  # Shannon entropy calculation
+
+# ---------------------------------------------------------------------------------
+# Load Speech Signal
+def load_audio(filename):
+    try:
+        rate, data = wav.read(filename)
+        if data.ndim > 1:
+            data = data[:, 0]  # Take one channel if stereo
+        return rate, data.astype(float) / np.max(np.abs(data))  # Normalize
+    except Exception as e:
+        print("Error loading audio file:", e)
+        return None, None
+
+# ---------------------------------------------------------------------------------
+# Chen's Hyperchaotic System (Fixed)
+def generate_chen_chaos(length, dt=0.01):
+    alpha, sigma, gamm, beta, epsilon = 36.0, 16.0, 28.0, 3.0, 0.2
+    x, y, z, w = 0.1, 0.1, 0.1, 0.1  # Initial non-zero values
+    chaos_seq = np.zeros(length)
+    
+    for i in range(length):
+        dx = alpha * (y - x)
+        dy = sigma * x - x * z + gamm * y - w
+        dz = x * y - beta * z
+        dw = x - epsilon
+
+        x += dx * dt
+        y += dy * dt
+        z += dz * dt
+        w += dw * dt
+        
+        chaos_seq[i] = x
+    
+    # Normalize chaos sequence properly
+    chaos_seq = np.nan_to_num(chaos_seq, nan=0.0)
+    chaos_seq = (chaos_seq - np.min(chaos_seq)) / (np.max(chaos_seq) - np.min(chaos_seq))  # Scale to [0,1]
+    chaos_seq = 2 * chaos_seq - 1  # Scale to [-1,1]
+
+    return chaos_seq
+
+# ---------------------------------------------------------------------------------
+# Haar Discrete Wavelet Transform (DWT)
+def haar_dwt(signal):
+    coeffs = pywt.wavedec(signal, 'haar', level=1)
+    dwt_signal = np.concatenate(coeffs)
+    
+    # Ensure no NaN values
+    return np.nan_to_num(dwt_signal, nan=0.0)
+
+# ---------------------------------------------------------------------------------
+# Chaotic Permutation
+def chaotic_permutation(signal, chaos_seq):
+    permuted_signal = np.zeros_like(signal)
+    if chaos_seq[0] > 0:
+        permuted_signal[:] = signal[::-1]  # Full reverse
+    else:
+        half = len(signal) // 2
+        permuted_signal[:half] = signal[half-1::-1]  # Reverse first half
+        permuted_signal[half:] = signal[:half-1:-1]  # Reverse second half
+    return permuted_signal
+
+# ---------------------------------------------------------------------------------
+# Encryption Function (Fixed)
+def encrypt_speech(signal):
+    if len(signal) == 0:
+        print("Error: Empty input signal!")
+        return np.array([])  # Return empty array
+    
+    dwt_signal = haar_dwt(signal)  # Ensure no NaN in DWT
+    chaos_seq = generate_chen_chaos(len(dwt_signal))
+
+    # Ensure equal length before multiplication
+    if len(dwt_signal) == len(chaos_seq):
+        multiplied_signal = dwt_signal * chaos_seq
+        multiplied_signal = np.nan_to_num(multiplied_signal, nan=0.0)  # Fix NaNs
+
+        encrypted_signal = chaotic_permutation(multiplied_signal, chaos_seq)
+        encrypted_signal = np.nan_to_num(encrypted_signal, nan=0.0)  # Fix NaNs
+    else:
+        print("Error: Length mismatch between signals!")
+        return np.array([])
+
+    # Normalize encrypted signal
+    max_val = np.max(np.abs(encrypted_signal))
+    if max_val > 1e-9:  # Avoid dividing by near-zero values
+        encrypted_signal /= max_val  
+
+    return encrypted_signal
+
+# ---------------------------------------------------------------------------------
+# Compute Shannon Entropy
+def compute_entropy(signal):
+    signal = np.nan_to_num(signal, nan=0.0)  # Remove NaN before calculating
+    hist, _ = np.histogram(signal, bins=256, density=True)
+    hist = hist[hist > 0]  # Remove zero values to prevent log(0)
+    return entropy(hist)
+
+# ---------------------------------------------------------------------------------
+# Compute Pearson Correlation
+def compute_correlation(signal1, signal2):
+    return np.corrcoef(signal1, signal2)[0, 1]
+
+# ---------------------------------------------------------------------------------
+# Compute and Print Table
+def print_table(original, encrypted):
+    correlation_index = compute_correlation(original, encrypted)
+
+    data = {
+        "Metric": ["Mean", "Std Dev", "Min", "Max", "Shannon Entropy", "Correlation Index"],
+        "Original Signal": [
+            np.mean(original),
+            np.std(original),
+            np.min(original),
+            np.max(original),
+            compute_entropy(original),
+            "-"
+        ],
+        "Encrypted Signal": [
+            np.mean(encrypted),
+            np.std(encrypted),
+            np.min(encrypted),
+            np.max(encrypted),
+            compute_entropy(encrypted),
+            correlation_index
+        ]
+    }
+    df = pd.DataFrame(data)
+    
+    print("\n********** Statistical Comparison of Original and Encrypted Signal **********\n")
+    print(df.to_string(index=False))  # Print table in a structured format
+
+# ---------------------------------------------------------------------------------
+# Run the Analysis
+filename = r"C:\Users\Kavinesh\Downloads\speech-94649.wav"  # Replace with actual file path
+rate, original_signal = load_audio(filename)
+
+if original_signal is not None:
+    subset_length = len(original_signal) // 2  # Taking half of the signal
+    encrypted_signal = encrypt_speech(original_signal[:subset_length])
+    
+    if len(encrypted_signal) > 0:
+        print_table(original_signal[:subset_length], encrypted_signal)
+    else:
+        print("Encryption failed!")
+else:
+    print("Failed to load audio.")

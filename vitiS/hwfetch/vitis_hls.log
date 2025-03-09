@@ -1,0 +1,33 @@
+INFO: [HLS 200-10] Running 'C:/xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Mohamed Rinos' on host 'rinos' (Windows NT_amd64 version 6.2) on Tue Feb 04 21:19:27 +0530 2025
+INFO: [HLS 200-10] In directory 'C:/Windows/vitiS/hwfetch'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'C:/Windows/vitiS/hwfetch/fetch/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source C:/Windows/vitiS/hwfetch/fetch/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project fetch 
+INFO: [HLS 200-10] Opening project 'C:/Windows/vitiS/hwfetch/fetch'.
+INFO: [HLS 200-1510] Running: set_top fetching 
+INFO: [HLS 200-1510] Running: add_files fetch/encrypt.cpp 
+INFO: [HLS 200-10] Adding design file 'fetch/encrypt.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb fetch/test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'fetch/test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Windows/vitiS/hwfetch/fetch/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7a100t-csg324-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7a100tcsg324-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -setup -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../test.cpp in debug mode
+   Compiling ../../../encrypt.cpp in debug mode
+   Generating csim.exe
+INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
+INFO: [SIM 211-1] CSim file generation done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.588 seconds; current allocated memory: 0.348 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 7.789 seconds; peak allocated memory: 198.898 MB.

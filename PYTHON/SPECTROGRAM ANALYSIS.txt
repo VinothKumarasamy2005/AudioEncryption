@@ -1,0 +1,103 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.io.wavfile as wav
+from scipy.signal import spectrogram
+import pywt
+
+# ---------------------------------------------------------------------------------
+# Load Speech Signal
+def load_audio(filename):
+    try:
+        rate, data = wav.read(filename)
+        if data.ndim > 1:
+            data = data[:, 0]  # Convert stereo to mono
+        return rate, data.astype(float) / np.max(np.abs(data))  # Normalize
+    except Exception as e:
+        print("Error loading audio:", e)
+        return None, None
+
+# ---------------------------------------------------------------------------------
+# Generate Chen's Hyperchaotic Sequence (Fixed)
+def generate_chen_chaos(length, dt=0.001):
+    alpha, sigma, gamm, beta, epsilon = 36.0, 16.0, 28.0, 3.0, 0.2
+    x, y, z, w = 0.1, 0.1, 0.1, 0.1
+    chaos_seq = np.zeros(length)
+
+    for i in range(length):
+        dx = alpha * (y - x)
+        dy = sigma * x - x * z + gamm * y - w
+        dz = x * y - beta * z
+        dw = x - epsilon
+
+        # Update values with small time step
+        x += dx * dt
+        y += dy * dt
+        z += dz * dt
+        w += dw * dt
+
+        # Apply constraints to prevent overflow
+        x, y, z, w = np.clip([x, y, z, w], -50, 50)  # Limit range
+
+        chaos_seq[i] = x
+
+    chaos_seq /= np.max(np.abs(chaos_seq))  # Normalize
+    return np.nan_to_num(chaos_seq)  # Replace NaN values
+
+# ---------------------------------------------------------------------------------
+# Haar DWT
+def haar_dwt(signal):
+    coeffs = pywt.wavedec(signal, 'haar', level=1)
+    return np.nan_to_num(np.concatenate(coeffs))  # Avoid NaN
+
+# ---------------------------------------------------------------------------------
+# Encryption Process
+def encrypt_speech(signal):
+    dwt_signal = haar_dwt(signal)
+    chaos_seq = generate_chen_chaos(len(dwt_signal))
+
+    if len(dwt_signal) != len(chaos_seq):
+        return np.array([])
+
+    encrypted_signal = dwt_signal * chaos_seq
+    return np.nan_to_num(encrypted_signal / np.max(np.abs(encrypted_signal)))  # Normalize
+
+# ---------------------------------------------------------------------------------
+# Spectrogram Plotting (Fixed Log Scaling)
+def plot_spectrogram(signal, rate, title, subplot_position):
+    plt.subplot(1, 2, subplot_position)
+    f, t, Sxx = spectrogram(signal, fs=rate, nperseg=256)
+
+    # Replace zero values to prevent log10 issues
+    Sxx[Sxx == 0] = 1e-10
+
+    plt.pcolormesh(t, f, 10 * np.log10(Sxx), shading='gouraud')
+    plt.ylabel('Frequency (Hz)')
+    plt.xlabel('Time (s)')
+    plt.title(title)
+    plt.colorbar(label='Power/Frequency (dB/Hz)')
+
+# ---------------------------------------------------------------------------------
+# Run the Analysis
+filename = r"C:\Users\Kavinesh\Downloads\speech-94649.wav"
+rate, original_signal = load_audio(filename)
+
+if original_signal is not None:
+    subset_length = len(original_signal) // 2
+    encrypted_signal = encrypt_speech(original_signal[:subset_length])
+
+    if len(encrypted_signal) > 0:
+        plt.figure(figsize=(12, 5))
+
+        # Spectrogram of the Original Signal
+        plot_spectrogram(original_signal[:subset_length], rate, "Original Signal", 1)
+
+        # Spectrogram of the Encrypted Signal
+        plot_spectrogram(encrypted_signal, rate, "Encrypted Signal", 2)
+
+        plt.suptitle("Spectrogram Analysis: Original vs. Encrypted Signal")
+        plt.tight_layout()
+        plt.show()
+    else:
+        print("Encryption failed!")
+else:
+    print("Failed to load audio.")

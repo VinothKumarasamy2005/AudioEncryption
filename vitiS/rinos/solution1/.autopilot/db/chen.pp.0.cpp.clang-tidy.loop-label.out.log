@@ -1,0 +1,5 @@
+C:\Windows\vitiS\rinos\solution1\.autopilot\db\chen.pp.0.cpp:184:5: warning: Added loop label VITIS_LOOP_12_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < num_iterations; i++) {
+    ^~~
+    VITIS_LOOP_12_1: 
+C:\Windows\vitiS\rinos\solution1\.autopilot\db\chen.pp.0.cpp:184:5: note: FIX-IT applied suggested code changes

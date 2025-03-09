@@ -1,0 +1,195 @@
+
+
+================================================================
+== Vitis HLS Report for 'encryfinal'
+================================================================
+* Date:           Thu Feb 13 18:45:47 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        encrymodify
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a100t-csg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.826 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+------------+----------+------------+-----+------------+---------+
+    |   Latency (cycles)   |   Latency (absolute)  |     Interval     | Pipeline|
+    |   min   |     max    |    min   |     max    | min |     max    |   Type  |
+    +---------+------------+----------+------------+-----+------------+---------+
+    |      474|  3221225918|  4.740 us|  32.212 sec|  475|  3221225919|       no|
+    +---------+------------+----------+------------+-----+------------+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------+-------------------------------------+---------+-----------+-----------+-----------+-----+-----------+---------+
+        |                                                |                                     |   Latency (cycles)  |   Latency (absolute)  |     Interval    | Pipeline|
+        |                    Instance                    |                Module               |   min   |    max    |    min    |    max    | min |    max    |   Type  |
+        +------------------------------------------------+-------------------------------------+---------+-----------+-----------+-----------+-----+-----------+---------+
+        |grp_encryfinal_Pipeline_VITIS_LOOP_40_1_fu_86   |encryfinal_Pipeline_VITIS_LOOP_40_1  |       25|         25|   0.250 us|   0.250 us|   25|         25|       no|
+        |grp_encryfinal_Pipeline_2_fu_94                 |encryfinal_Pipeline_2                |       18|         18|   0.180 us|   0.180 us|   18|         18|       no|
+        |grp_encryfinal_Pipeline_VITIS_LOOP_86_1_fu_99   |encryfinal_Pipeline_VITIS_LOOP_86_1  |       26|         26|   0.260 us|   0.260 us|   26|         26|       no|
+        |grp_encryfinal_Pipeline_VITIS_LOOP_46_3_fu_107  |encryfinal_Pipeline_VITIS_LOOP_46_3  |       72|  536870980|   0.720 us|  5.369 sec|   72|  536870980|       no|
+        |grp_encryfinal_Pipeline_VITIS_LOOP_50_4_fu_115  |encryfinal_Pipeline_VITIS_LOOP_50_4  |        4|  268435457|  40.000 ns|  2.684 sec|    4|  268435457|       no|
+        |grp_encryfinal_Pipeline_VITIS_LOOP_64_1_fu_122  |encryfinal_Pipeline_VITIS_LOOP_64_1  |       18|         18|   0.180 us|   0.180 us|   18|         18|       no|
+        +------------------------------------------------+-------------------------------------+---------+-----------+-----------+-----------+-----+-----------+---------+
+
+        * Loop: 
+        +-------------------+---------+------------+-----------------+-----------+-----------+------+----------+
+        |                   |   Latency (cycles)   |    Iteration    |  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |     max    |     Latency     |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+------------+-----------------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_44_2  |      400|  3221225844|  100 ~ 805306461|          -|          -|     4|        no|
+        +-------------------+---------+------------+-----------------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     31|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        6|   14|    2269|   2081|    -|
+|Memory           |        8|    -|       0|      0|    0|
+|Multiplexer      |        -|    -|       -|    230|    -|
+|Register         |        -|    -|      39|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |       14|   14|    2308|   2342|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      270|  240|  126800|  63400|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        5|    5|       1|      3|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------+-------------------------------------+---------+----+------+------+-----+
+    |                    Instance                    |                Module               | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +------------------------------------------------+-------------------------------------+---------+----+------+------+-----+
+    |control_s_axi_U                                 |control_s_axi                        |        4|   0|   196|   188|    0|
+    |grp_encryfinal_Pipeline_2_fu_94                 |encryfinal_Pipeline_2                |        0|   0|     7|    54|    0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_40_1_fu_86   |encryfinal_Pipeline_VITIS_LOOP_40_1  |        0|   0|   187|    97|    0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_46_3_fu_107  |encryfinal_Pipeline_VITIS_LOOP_46_3  |        0|   3|  1221|  1248|    0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_50_4_fu_115  |encryfinal_Pipeline_VITIS_LOOP_50_4  |        0|   0|    13|    83|    0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_64_1_fu_122  |encryfinal_Pipeline_VITIS_LOOP_64_1  |        0|   0|    18|    96|    0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_86_1_fu_99   |encryfinal_Pipeline_VITIS_LOOP_86_1  |        2|  11|   627|   315|    0|
+    +------------------------------------------------+-------------------------------------+---------+----+------+------+-----+
+    |Total                                           |                                     |        6|  14|  2269|  2081|    0|
+    +------------------------------------------------+-------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +---------------------+---------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |        Memory       |              Module             | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +---------------------+---------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |temp_U               |temp_RAM_AUTO_1R1W               |        2|  0|   0|    0|    16|   64|     1|         1024|
+    |multipliedSignal_U   |temp_RAM_AUTO_1R1W               |        2|  0|   0|    0|    16|   64|     1|         1024|
+    |transformedSignal_U  |transformedSignal_RAM_AUTO_1R1W  |        4|  0|   0|    0|    16|   64|     1|         1024|
+    +---------------------+---------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                |                                 |        8|  0|   0|    0|    48|  192|     3|         3072|
+    +---------------------+---------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |icmp_ln44_fu_147_p2  |      icmp|   0|  0|  31|          24|           1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  31|          24|           1|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                   |  49|         12|    1|         12|
+    |multipliedSignal_address0   |  13|          3|    4|         12|
+    |multipliedSignal_ce0        |  13|          3|    1|          3|
+    |multipliedSignal_we0        |   9|          2|    1|          2|
+    |step_fu_70                  |   9|          2|    5|         10|
+    |temp_address0               |  17|          4|    4|         16|
+    |temp_ce0                    |  17|          4|    1|          4|
+    |temp_d0                     |  13|          3|   64|        192|
+    |temp_we0                    |  13|          3|    1|          3|
+    |transformedSignal_address0  |  21|          5|    4|         20|
+    |transformedSignal_ce0       |  21|          5|    1|          5|
+    |transformedSignal_ce1       |   9|          2|    1|          2|
+    |transformedSignal_d0        |  13|          3|   64|        192|
+    |transformedSignal_we0       |  13|          3|    1|          3|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       | 230|         54|  153|        476|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |                             Name                            | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                    |  11|   0|   11|          0|
+    |grp_encryfinal_Pipeline_2_fu_94_ap_start_reg                 |   1|   0|    1|          0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_40_1_fu_86_ap_start_reg   |   1|   0|    1|          0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_46_3_fu_107_ap_start_reg  |   1|   0|    1|          0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_50_4_fu_115_ap_start_reg  |   1|   0|    1|          0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_64_1_fu_122_ap_start_reg  |   1|   0|    1|          0|
+    |grp_encryfinal_Pipeline_VITIS_LOOP_86_1_fu_99_ap_start_reg   |   1|   0|    1|          0|
+    |step_1_reg_179                                               |   5|   0|   25|         20|
+    |step_fu_70                                                   |   5|   0|   25|         20|
+    |tmp_reg_184                                                  |   4|   0|   24|         20|
+    |trunc_ln_reg_197                                             |   4|   0|    4|          0|
+    |zext_ln46_reg_192                                            |   4|   0|   25|         21|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                        |  39|   0|  120|         81|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|       control|         array|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|       control|         array|
+|s_axi_control_AWADDR   |   in|    8|       s_axi|       control|         array|
+|s_axi_control_WVALID   |   in|    1|       s_axi|       control|         array|
+|s_axi_control_WREADY   |  out|    1|       s_axi|       control|         array|
+|s_axi_control_WDATA    |   in|   32|       s_axi|       control|         array|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|       control|         array|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|       control|         array|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|       control|         array|
+|s_axi_control_ARADDR   |   in|    8|       s_axi|       control|         array|
+|s_axi_control_RVALID   |  out|    1|       s_axi|       control|         array|
+|s_axi_control_RREADY   |   in|    1|       s_axi|       control|         array|
+|s_axi_control_RDATA    |  out|   32|       s_axi|       control|         array|
+|s_axi_control_RRESP    |  out|    2|       s_axi|       control|         array|
+|s_axi_control_BVALID   |  out|    1|       s_axi|       control|         array|
+|s_axi_control_BREADY   |   in|    1|       s_axi|       control|         array|
+|s_axi_control_BRESP    |  out|    2|       s_axi|       control|         array|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|    encryfinal|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|    encryfinal|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|    encryfinal|  return value|
++-----------------------+-----+-----+------------+--------------+--------------+
+

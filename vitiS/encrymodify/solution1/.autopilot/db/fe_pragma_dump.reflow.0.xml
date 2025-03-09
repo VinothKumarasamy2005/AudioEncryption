@@ -1,0 +1,7 @@
+<pragmas>
+<pragma file="encrymodify/encryfinal.cpp" line="94" pragmaType="interface" parentfunction="encryfinal" mode="s_axilite" port="speechSignal" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="encrymodify/encryfinal.cpp" line="95" pragmaType="interface" parentfunction="encryfinal" mode="s_axilite" port="encryptedSignal" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="encrymodify/encryfinal.cpp" line="96" pragmaType="interface" parentfunction="encryfinal" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="encrymodify/encryfinal.cpp" line="99" pragmaType="interface" parentfunction="encryfinal" mode="ap_memory" port="speechSignal" storage_type="-1" impl="-1" latency="-1" name="" depth="4096"/>
+<pragma file="encrymodify/encryfinal.cpp" line="100" pragmaType="interface" parentfunction="encryfinal" mode="ap_memory" port="encryptedSignal" storage_type="-1" impl="-1" latency="-1" name="" depth="4096"/>
+</pragmas>

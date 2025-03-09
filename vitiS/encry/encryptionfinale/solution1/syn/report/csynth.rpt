@@ -1,0 +1,136 @@
+
+
+================================================================
+== Synthesis Summary Report of 'encryfinal'
+================================================================
++ General Information: 
+    * Date:           Thu Feb  6 20:26:44 2025
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        encryptionfinale
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a100t-csg324-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------------------+------+------+------------+-----------+-----------+------------+-----------+----------+---------+---------+------------+-----------+-----+
+    |                 Modules                 | Issue|      |  Latency   |  Latency  | Iteration |            |    Trip   |          |         |         |            |           |     |
+    |                 & Loops                 | Type | Slack|  (cycles)  |    (ns)   |  Latency  |  Interval  |   Count   | Pipelined|  BRAM   |   DSP   |     FF     |    LUT    | URAM|
+    +-----------------------------------------+------+------+------------+-----------+-----------+------------+-----------+----------+---------+---------+------------+-----------+-----+
+    |+ encryfinal                             |     -|  0.47|  3221225918|  3.221e+10|          -|  3221225919|          -|        no|  10 (3%)|  14 (5%)|   2112 (1%)|  2154 (3%)|    -|
+    | + encryfinal_Pipeline_VITIS_LOOP_40_1   |     -|  1.28|          25|    250.000|          -|          25|          -|        no|        -|        -|   187 (~0%)|   97 (~0%)|    -|
+    |  o VITIS_LOOP_40_1                      |     -|  7.30|          23|    230.000|          9|           1|         16|       yes|        -|        -|           -|          -|    -|
+    | + encryfinal_Pipeline_VITIS_LOOP_86_1   |     -|  0.47|          26|    260.000|          -|          26|          -|        no|  2 (~0%)|  11 (4%)|   627 (~0%)|  315 (~0%)|    -|
+    |  o VITIS_LOOP_86_1                      |     -|  7.30|          24|    240.000|         10|           1|         16|       yes|        -|        -|           -|          -|    -|
+    | + encryfinal_Pipeline_VITIS_LOOP_64_1   |     -|  0.79|          18|    180.000|          -|          18|          -|        no|        -|        -|    18 (~0%)|   96 (~0%)|    -|
+    |  o VITIS_LOOP_64_1                      |     -|  7.30|          16|    160.000|          2|           1|         16|       yes|        -|        -|           -|          -|    -|
+    | o VITIS_LOOP_44_2                       |     -|  7.30|  3221225844|  3.221e+10|  805306461|           -|          4|        no|        -|        -|           -|          -|    -|
+    |  + encryfinal_Pipeline_2                |     -|  0.57|          18|    180.000|          -|          18|          -|        no|        -|        -|     7 (~0%)|   54 (~0%)|    -|
+    |   o Loop 1                              |     -|  7.30|          16|    160.000|          1|           1|         16|       yes|        -|        -|           -|          -|    -|
+    |  + encryfinal_Pipeline_VITIS_LOOP_46_3  |     -|  1.65|   536870980|  5.369e+09|          -|   536870980|          -|        no|        -|   3 (1%)|  1221 (~0%)|  1248 (1%)|    -|
+    |   o VITIS_LOOP_46_3                     |    II|  7.30|   536870978|  5.369e+09|         71|           2|  268435455|       yes|        -|        -|           -|          -|    -|
+    |  + encryfinal_Pipeline_VITIS_LOOP_50_4  |     -|  0.79|   268435457|  2.684e+09|          -|   268435457|          -|        no|        -|        -|    13 (~0%)|   83 (~0%)|    -|
+    |   o VITIS_LOOP_50_4                     |     -|  7.30|   268435455|  2.684e+09|          2|           1|  268435455|       yes|        -|        -|           -|          -|    -|
+    +-----------------------------------------+------+------+------------+-----------+-----------+------------+-----------+----------+---------+---------+------------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++--------------------------+-----------+----------+
+| Port                     | Direction | Bitwidth |
++--------------------------+-----------+----------+
+| encryptedSignal_address0 | out       | 4        |
+| encryptedSignal_d0       | out       | 64       |
+| speechSignal_address0    | out       | 4        |
+| speechSignal_q0          | in        | 32       |
++--------------------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------------+-----------+-------------+
+| Argument        | Direction | Datatype    |
++-----------------+-----------+-------------+
+| speechSignal    | in        | int const * |
+| encryptedSignal | out       | double*     |
++-----------------+-----------+-------------+
+
+* SW-to-HW Mapping
++-----------------+--------------------------+---------+----------+
+| Argument        | HW Interface             | HW Type | HW Usage |
++-----------------+--------------------------+---------+----------+
+| speechSignal    | speechSignal_address0    | port    | offset   |
+| speechSignal    | speechSignal_ce0         | port    |          |
+| speechSignal    | speechSignal_q0          | port    |          |
+| encryptedSignal | encryptedSignal_address0 | port    | offset   |
+| encryptedSignal | encryptedSignal_ce0      | port    |          |
+| encryptedSignal | encryptedSignal_we0      | port    |          |
+| encryptedSignal | encryptedSignal_d0       | port    |          |
++-----------------+--------------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                     | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++------------------------------------------+-----+--------+------------+------+---------+---------+
+| + encryfinal                             | 14  |        |            |      |         |         |
+|  + encryfinal_Pipeline_VITIS_LOOP_40_1   | 0   |        |            |      |         |         |
+|    add_ln40_fu_81_p2                     |     |        | add_ln40   | add  | fabric  | 0       |
+|  + encryfinal_Pipeline_2                 | 0   |        |            |      |         |         |
+|    empty_13_fu_58_p2                     |     |        | empty_13   | add  | fabric  | 0       |
+|  + encryfinal_Pipeline_VITIS_LOOP_86_1   | 11  |        |            |      |         |         |
+|    add_ln86_fu_93_p2                     |     |        | add_ln86   | add  | fabric  | 0       |
+|    dmul_64ns_64ns_64_7_max_dsp_1_U17     | 11  |        | mul_i      | dmul | maxdsp  | 6       |
+|  + encryfinal_Pipeline_VITIS_LOOP_46_3   | 3   |        |            |      |         |         |
+|    add_ln46_fu_170_p2                    |     |        | add_ln46   | add  | fabric  | 0       |
+|    dadddsub_64ns_64ns_64_8_full_dsp_1_U6 | 3   |        | add17_i    | dadd | fulldsp | 7       |
+|    ddiv_64ns_64ns_64_59_no_dsp_1_U7      |     |        | div18_i    | ddiv | fabric  | 58      |
+|    dadddsub_64ns_64ns_64_8_full_dsp_1_U6 | 3   |        | sub_i      | dadd | fulldsp | 7       |
+|    ddiv_64ns_64ns_64_59_no_dsp_1_U7      |     |        | div28_i    | ddiv | fabric  | 58      |
+|    add_ln48_fu_187_p2                    |     |        | add_ln48   | add  | fabric  | 0       |
+|  + encryfinal_Pipeline_VITIS_LOOP_50_4   | 0   |        |            |      |         |         |
+|    add_ln50_fu_91_p2                     |     |        | add_ln50   | add  | fabric  | 0       |
+|  + encryfinal_Pipeline_VITIS_LOOP_64_1   | 0   |        |            |      |         |         |
+|    add_ln64_fu_91_p2                     |     |        | add_ln64   | add  | fabric  | 0       |
+|    add_ln64_1_fu_105_p2                  |     |        | add_ln64_1 | add  | fabric  | 0       |
++------------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------------------------------+---------------+------+------+------+--------+-------------------+------+---------+------------------+
+| Name                                   | Usage         | Type | BRAM | URAM | Pragma | Variable          | Impl | Latency | Bitwidth, Depth, |
+|                                        |               |      |      |      |        |                   |      |         | Banks            |
++----------------------------------------+---------------+------+------+------+--------+-------------------+------+---------+------------------+
+| + encryfinal                           |               |      | 10   | 0    |        |                   |      |         |                  |
+|   temp_U                               | ram_1p array  |      | 4    |      |        | temp              | auto | 1       | 64, 16, 1        |
+|   transformedSignal_U                  | ram_s2p array |      | 4    |      |        | transformedSignal | auto | 1       | 64, 16, 1        |
+|   multipliedSignal_U                   | ram_1p array  |      | 4    |      |        | multipliedSignal  | auto | 1       | 64, 16, 1        |
+|  + encryfinal_Pipeline_VITIS_LOOP_86_1 |               |      | 2    | 0    |        |                   |      |         |                  |
+|    chaoticSequence_U                   | rom_1p        |      | 2    |      |        | chaoticSequence   | auto | 1       | 64, 16, 1        |
++----------------------------------------+---------------+------+------+------+--------+-------------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+  No pragmas found
+

@@ -1,0 +1,29 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../tb.cpp in debug mode
+csim.mk:79: recipe for target 'obj/tb.o' failed
+../../../tb.cpp: In function 'int main()':
+../../../tb.cpp:4:22: error: 'FRAME_SIZE' was not declared in this scope
+     int speechSignal[FRAME_SIZE] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160};
+                      ^~~~~~~~~~
+../../../tb.cpp:7:5: error: 'cout' was not declared in this scope
+     cout << "Original Speech Signal: ";
+     ^~~~
+../../../tb.cpp:8:50: error: 'speechSignal' was not declared in this scope
+     for (int i = 0; i < FRAME_SIZE; i++) cout << speechSignal[i] << " ";
+                                                  ^~~~~~~~~~~~
+../../../tb.cpp:9:13: error: 'endl' was not declared in this scope
+     cout << endl;
+             ^~~~
+../../../tb.cpp:12:16: error: 'speechSignal' was not declared in this scope
+     encryfinal(speechSignal, encryptedData);
+                ^~~~~~~~~~~~
+../../../tb.cpp:12:30: error: 'encryptedData' was not declared in this scope
+     encryfinal(speechSignal, encryptedData);
+                              ^~~~~~~~~~~~~
+../../../tb.cpp:12:43: error: 'encryfinal' was not declared in this scope
+     encryfinal(speechSignal, encryptedData);
+                                           ^
+make: *** [obj/tb.o] Error 1
+ERR: [SIM 100] CSim file generation failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

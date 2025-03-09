@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="chen_sys.cpp" path="C:\Windows\vitiS\new\chen_sys.cpp"/>
+    <originFiles name="chen_hyp.h" path="C:\Windows\vitiS\new\chen_hyp.h"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

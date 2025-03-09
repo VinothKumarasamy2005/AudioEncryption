@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T21:07:48.170+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T20:00:13.109+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T19:55:55.823+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T19:53:49.585+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T19:47:07.738+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T18:58:21.247+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T18:52:28.793+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T18:48:32.841+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T18:32:30.979+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T18:30:09.811+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T18:03:19.371+0530"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="fetch" solutionName="solution1" date="2025-02-04T17:53:35.925+0530"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

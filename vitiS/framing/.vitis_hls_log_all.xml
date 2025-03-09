@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="framing" solutionName="solution1" date="2025-02-11T17:35:58.109+0530" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'framing': contains subloop(s) that are not unrolled." projectName="framing" solutionName="solution1" date="2025-02-11T17:35:57.298+0530" type="Warning"/>
+        <logs message="WARNING: [HLS 200-932] Cannot unroll loop 'VITIS_LOOP_21_1' (framing/framing.cpp:21) in function 'framing' completely: variable loop bound." projectName="framing" solutionName="solution1" date="2025-02-11T17:35:54.958+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

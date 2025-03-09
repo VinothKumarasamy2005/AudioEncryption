@@ -1,0 +1,15 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+  **** SW Build 4023990 on Oct 11 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source C:/xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'C:/xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Mohamed Rinos' on host 'rinos' (Windows NT_amd64 version 6.2) on Sun Mar 09 11:25:01 +0530 2025
+INFO: [HLS 200-10] In directory 'C:/Windows/vitiS/encry/encryptionfinale'
+INFO: [HLS 200-10] Bringing up Vitis HLS GUI ... 
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 1 seconds. Total elapsed time: 69.042 seconds; peak allocated memory: 0.000 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Sun Mar  9 11:26:07 2025...

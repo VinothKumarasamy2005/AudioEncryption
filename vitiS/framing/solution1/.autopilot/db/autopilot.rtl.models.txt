@@ -1,0 +1,4 @@
+framing_control_s_axi
+framing_regslice_both
+framing_regslice_both
+framing

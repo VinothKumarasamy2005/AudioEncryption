@@ -1,0 +1,1668 @@
+
+
+================================================================
+== Vitis HLS Report for 'framing'
+================================================================
+* Date:           Tue Feb 11 17:35:57 2025
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        framing
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a100t-csg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.000 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_21_1  |        ?|        ?|       129|          -|          -|     ?|        no|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 130
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 130 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 68 
+68 --> 69 
+69 --> 70 
+70 --> 71 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 76 
+76 --> 77 
+77 --> 78 
+78 --> 79 
+79 --> 80 
+80 --> 81 
+81 --> 82 
+82 --> 83 
+83 --> 84 
+84 --> 85 
+85 --> 86 
+86 --> 87 
+87 --> 88 
+88 --> 89 
+89 --> 90 
+90 --> 91 
+91 --> 92 
+92 --> 93 
+93 --> 94 
+94 --> 95 
+95 --> 96 
+96 --> 97 
+97 --> 98 
+98 --> 99 
+99 --> 100 
+100 --> 101 
+101 --> 102 
+102 --> 103 
+103 --> 104 
+104 --> 105 
+105 --> 106 
+106 --> 107 
+107 --> 108 
+108 --> 109 
+109 --> 110 
+110 --> 111 
+111 --> 112 
+112 --> 113 
+113 --> 114 
+114 --> 115 
+115 --> 116 
+116 --> 117 
+117 --> 118 
+118 --> 119 
+119 --> 120 
+120 --> 121 
+121 --> 122 
+122 --> 123 
+123 --> 124 
+124 --> 125 
+125 --> 126 
+126 --> 127 
+127 --> 128 
+128 --> 129 
+129 --> 130 
+130 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 131 [1/1] (0.00ns)   --->   "%specpipeline_ln17 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_1" [framing/framing.cpp:17]   --->   Operation 131 'specpipeline' 'specpipeline_ln17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 132 [1/1] (0.00ns)   --->   "%spectopmodule_ln12 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_4" [framing/framing.cpp:12]   --->   Operation 132 'spectopmodule' 'spectopmodule_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 133 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %input_signal, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 133 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %input_signal"   --->   Operation 134 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 135 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %output_frames, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 135 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %output_frames"   --->   Operation 136 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 137 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_3, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0"   --->   Operation 137 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 138 [1/1] (1.00ns)   --->   "%tmp = nbreadreq i1 @_ssdm_op_NbReadReq.axis.i32P128A, i32 %input_signal, i32 1" [framing/framing.cpp:21]   --->   Operation 138 'nbreadreq' 'tmp' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_1 : Operation 139 [1/1] (0.00ns)   --->   "%br_ln21 = br i1 %tmp, void %while.end, void %VITIS_LOOP_22_2.preheader" [framing/framing.cpp:21]   --->   Operation 139 'br' 'br_ln21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 140 [1/1] (0.00ns)   --->   "%br_ln21 = br void %VITIS_LOOP_22_2" [framing/framing.cpp:21]   --->   Operation 140 'br' 'br_ln21' <Predicate = (tmp)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.00>
+ST_2 : Operation 141 [1/1] (1.00ns)   --->   "%input_signal_read = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 141 'read' 'input_signal_read' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_2 : Operation 142 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read" [framing/framing.cpp:26]   --->   Operation 142 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 3 <SV = 2> <Delay = 2.00>
+ST_3 : Operation 143 [1/1] (1.00ns)   --->   "%input_signal_read_1 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 143 'read' 'input_signal_read_1' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_3 : Operation 144 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read" [framing/framing.cpp:26]   --->   Operation 144 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_3 : Operation 145 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_1" [framing/framing.cpp:26]   --->   Operation 145 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 4 <SV = 3> <Delay = 2.00>
+ST_4 : Operation 146 [1/1] (1.00ns)   --->   "%input_signal_read_2 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 146 'read' 'input_signal_read_2' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_4 : Operation 147 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_1" [framing/framing.cpp:26]   --->   Operation 147 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_4 : Operation 148 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_2" [framing/framing.cpp:26]   --->   Operation 148 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 5 <SV = 4> <Delay = 2.00>
+ST_5 : Operation 149 [1/1] (1.00ns)   --->   "%input_signal_read_3 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 149 'read' 'input_signal_read_3' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_5 : Operation 150 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_2" [framing/framing.cpp:26]   --->   Operation 150 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_5 : Operation 151 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_3" [framing/framing.cpp:26]   --->   Operation 151 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 6 <SV = 5> <Delay = 2.00>
+ST_6 : Operation 152 [1/1] (1.00ns)   --->   "%input_signal_read_4 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 152 'read' 'input_signal_read_4' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_6 : Operation 153 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_3" [framing/framing.cpp:26]   --->   Operation 153 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_6 : Operation 154 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_4" [framing/framing.cpp:26]   --->   Operation 154 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 7 <SV = 6> <Delay = 2.00>
+ST_7 : Operation 155 [1/1] (1.00ns)   --->   "%input_signal_read_5 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 155 'read' 'input_signal_read_5' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_7 : Operation 156 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_4" [framing/framing.cpp:26]   --->   Operation 156 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_7 : Operation 157 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_5" [framing/framing.cpp:26]   --->   Operation 157 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 8 <SV = 7> <Delay = 2.00>
+ST_8 : Operation 158 [1/1] (1.00ns)   --->   "%input_signal_read_6 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 158 'read' 'input_signal_read_6' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_8 : Operation 159 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_5" [framing/framing.cpp:26]   --->   Operation 159 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_8 : Operation 160 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_6" [framing/framing.cpp:26]   --->   Operation 160 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 9 <SV = 8> <Delay = 2.00>
+ST_9 : Operation 161 [1/1] (1.00ns)   --->   "%input_signal_read_7 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 161 'read' 'input_signal_read_7' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_9 : Operation 162 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_6" [framing/framing.cpp:26]   --->   Operation 162 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_9 : Operation 163 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_7" [framing/framing.cpp:26]   --->   Operation 163 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 10 <SV = 9> <Delay = 2.00>
+ST_10 : Operation 164 [1/1] (1.00ns)   --->   "%input_signal_read_8 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 164 'read' 'input_signal_read_8' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_10 : Operation 165 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_7" [framing/framing.cpp:26]   --->   Operation 165 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_10 : Operation 166 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_8" [framing/framing.cpp:26]   --->   Operation 166 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 11 <SV = 10> <Delay = 2.00>
+ST_11 : Operation 167 [1/1] (1.00ns)   --->   "%input_signal_read_9 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 167 'read' 'input_signal_read_9' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_11 : Operation 168 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_8" [framing/framing.cpp:26]   --->   Operation 168 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_11 : Operation 169 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_9" [framing/framing.cpp:26]   --->   Operation 169 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 12 <SV = 11> <Delay = 2.00>
+ST_12 : Operation 170 [1/1] (1.00ns)   --->   "%input_signal_read_10 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 170 'read' 'input_signal_read_10' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_12 : Operation 171 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_9" [framing/framing.cpp:26]   --->   Operation 171 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_12 : Operation 172 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_10" [framing/framing.cpp:26]   --->   Operation 172 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 13 <SV = 12> <Delay = 2.00>
+ST_13 : Operation 173 [1/1] (1.00ns)   --->   "%input_signal_read_11 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 173 'read' 'input_signal_read_11' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_13 : Operation 174 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_10" [framing/framing.cpp:26]   --->   Operation 174 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_13 : Operation 175 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_11" [framing/framing.cpp:26]   --->   Operation 175 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 14 <SV = 13> <Delay = 2.00>
+ST_14 : Operation 176 [1/1] (1.00ns)   --->   "%input_signal_read_12 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 176 'read' 'input_signal_read_12' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_14 : Operation 177 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_11" [framing/framing.cpp:26]   --->   Operation 177 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_14 : Operation 178 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_12" [framing/framing.cpp:26]   --->   Operation 178 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 15 <SV = 14> <Delay = 2.00>
+ST_15 : Operation 179 [1/1] (1.00ns)   --->   "%input_signal_read_13 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 179 'read' 'input_signal_read_13' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_15 : Operation 180 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_12" [framing/framing.cpp:26]   --->   Operation 180 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_15 : Operation 181 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_13" [framing/framing.cpp:26]   --->   Operation 181 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 16 <SV = 15> <Delay = 2.00>
+ST_16 : Operation 182 [1/1] (1.00ns)   --->   "%input_signal_read_14 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 182 'read' 'input_signal_read_14' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_16 : Operation 183 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_13" [framing/framing.cpp:26]   --->   Operation 183 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_16 : Operation 184 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_14" [framing/framing.cpp:26]   --->   Operation 184 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 17 <SV = 16> <Delay = 2.00>
+ST_17 : Operation 185 [1/1] (1.00ns)   --->   "%input_signal_read_15 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 185 'read' 'input_signal_read_15' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_17 : Operation 186 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_14" [framing/framing.cpp:26]   --->   Operation 186 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_17 : Operation 187 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_15" [framing/framing.cpp:26]   --->   Operation 187 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 18 <SV = 17> <Delay = 2.00>
+ST_18 : Operation 188 [1/1] (1.00ns)   --->   "%input_signal_read_16 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 188 'read' 'input_signal_read_16' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_18 : Operation 189 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_15" [framing/framing.cpp:26]   --->   Operation 189 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_18 : Operation 190 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_16" [framing/framing.cpp:26]   --->   Operation 190 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 19 <SV = 18> <Delay = 2.00>
+ST_19 : Operation 191 [1/1] (1.00ns)   --->   "%input_signal_read_17 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 191 'read' 'input_signal_read_17' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_19 : Operation 192 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_16" [framing/framing.cpp:26]   --->   Operation 192 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_19 : Operation 193 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_17" [framing/framing.cpp:26]   --->   Operation 193 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 20 <SV = 19> <Delay = 2.00>
+ST_20 : Operation 194 [1/1] (1.00ns)   --->   "%input_signal_read_18 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 194 'read' 'input_signal_read_18' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_20 : Operation 195 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_17" [framing/framing.cpp:26]   --->   Operation 195 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_20 : Operation 196 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_18" [framing/framing.cpp:26]   --->   Operation 196 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 21 <SV = 20> <Delay = 2.00>
+ST_21 : Operation 197 [1/1] (1.00ns)   --->   "%input_signal_read_19 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 197 'read' 'input_signal_read_19' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 198 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_18" [framing/framing.cpp:26]   --->   Operation 198 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_21 : Operation 199 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_19" [framing/framing.cpp:26]   --->   Operation 199 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 22 <SV = 21> <Delay = 2.00>
+ST_22 : Operation 200 [1/1] (1.00ns)   --->   "%input_signal_read_20 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 200 'read' 'input_signal_read_20' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 201 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_19" [framing/framing.cpp:26]   --->   Operation 201 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_22 : Operation 202 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_20" [framing/framing.cpp:26]   --->   Operation 202 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 23 <SV = 22> <Delay = 2.00>
+ST_23 : Operation 203 [1/1] (1.00ns)   --->   "%input_signal_read_21 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 203 'read' 'input_signal_read_21' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 204 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_20" [framing/framing.cpp:26]   --->   Operation 204 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_23 : Operation 205 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_21" [framing/framing.cpp:26]   --->   Operation 205 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 24 <SV = 23> <Delay = 2.00>
+ST_24 : Operation 206 [1/1] (1.00ns)   --->   "%input_signal_read_22 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 206 'read' 'input_signal_read_22' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_24 : Operation 207 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_21" [framing/framing.cpp:26]   --->   Operation 207 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_24 : Operation 208 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_22" [framing/framing.cpp:26]   --->   Operation 208 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 25 <SV = 24> <Delay = 2.00>
+ST_25 : Operation 209 [1/1] (1.00ns)   --->   "%input_signal_read_23 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 209 'read' 'input_signal_read_23' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_25 : Operation 210 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_22" [framing/framing.cpp:26]   --->   Operation 210 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_25 : Operation 211 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_23" [framing/framing.cpp:26]   --->   Operation 211 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 26 <SV = 25> <Delay = 2.00>
+ST_26 : Operation 212 [1/1] (1.00ns)   --->   "%input_signal_read_24 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 212 'read' 'input_signal_read_24' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_26 : Operation 213 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_23" [framing/framing.cpp:26]   --->   Operation 213 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_26 : Operation 214 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_24" [framing/framing.cpp:26]   --->   Operation 214 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 27 <SV = 26> <Delay = 2.00>
+ST_27 : Operation 215 [1/1] (1.00ns)   --->   "%input_signal_read_25 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 215 'read' 'input_signal_read_25' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_27 : Operation 216 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_24" [framing/framing.cpp:26]   --->   Operation 216 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_27 : Operation 217 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_25" [framing/framing.cpp:26]   --->   Operation 217 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 28 <SV = 27> <Delay = 2.00>
+ST_28 : Operation 218 [1/1] (1.00ns)   --->   "%input_signal_read_26 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 218 'read' 'input_signal_read_26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_28 : Operation 219 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_25" [framing/framing.cpp:26]   --->   Operation 219 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_28 : Operation 220 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_26" [framing/framing.cpp:26]   --->   Operation 220 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 29 <SV = 28> <Delay = 2.00>
+ST_29 : Operation 221 [1/1] (1.00ns)   --->   "%input_signal_read_27 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 221 'read' 'input_signal_read_27' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_29 : Operation 222 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_26" [framing/framing.cpp:26]   --->   Operation 222 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_29 : Operation 223 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_27" [framing/framing.cpp:26]   --->   Operation 223 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 30 <SV = 29> <Delay = 2.00>
+ST_30 : Operation 224 [1/1] (1.00ns)   --->   "%input_signal_read_28 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 224 'read' 'input_signal_read_28' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_30 : Operation 225 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_27" [framing/framing.cpp:26]   --->   Operation 225 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_30 : Operation 226 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_28" [framing/framing.cpp:26]   --->   Operation 226 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 31 <SV = 30> <Delay = 2.00>
+ST_31 : Operation 227 [1/1] (1.00ns)   --->   "%input_signal_read_29 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 227 'read' 'input_signal_read_29' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_31 : Operation 228 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_28" [framing/framing.cpp:26]   --->   Operation 228 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_31 : Operation 229 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_29" [framing/framing.cpp:26]   --->   Operation 229 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 32 <SV = 31> <Delay = 2.00>
+ST_32 : Operation 230 [1/1] (1.00ns)   --->   "%input_signal_read_30 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 230 'read' 'input_signal_read_30' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_32 : Operation 231 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_29" [framing/framing.cpp:26]   --->   Operation 231 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_32 : Operation 232 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_30" [framing/framing.cpp:26]   --->   Operation 232 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 33 <SV = 32> <Delay = 2.00>
+ST_33 : Operation 233 [1/1] (1.00ns)   --->   "%input_signal_read_31 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 233 'read' 'input_signal_read_31' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_33 : Operation 234 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_30" [framing/framing.cpp:26]   --->   Operation 234 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_33 : Operation 235 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_31" [framing/framing.cpp:26]   --->   Operation 235 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 34 <SV = 33> <Delay = 2.00>
+ST_34 : Operation 236 [1/1] (1.00ns)   --->   "%input_signal_read_32 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 236 'read' 'input_signal_read_32' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_34 : Operation 237 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_31" [framing/framing.cpp:26]   --->   Operation 237 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_34 : Operation 238 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_32" [framing/framing.cpp:26]   --->   Operation 238 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 35 <SV = 34> <Delay = 2.00>
+ST_35 : Operation 239 [1/1] (1.00ns)   --->   "%input_signal_read_33 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 239 'read' 'input_signal_read_33' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_35 : Operation 240 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_32" [framing/framing.cpp:26]   --->   Operation 240 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_35 : Operation 241 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_33" [framing/framing.cpp:26]   --->   Operation 241 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 36 <SV = 35> <Delay = 2.00>
+ST_36 : Operation 242 [1/1] (1.00ns)   --->   "%input_signal_read_34 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 242 'read' 'input_signal_read_34' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_36 : Operation 243 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_33" [framing/framing.cpp:26]   --->   Operation 243 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_36 : Operation 244 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_34" [framing/framing.cpp:26]   --->   Operation 244 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 37 <SV = 36> <Delay = 2.00>
+ST_37 : Operation 245 [1/1] (1.00ns)   --->   "%input_signal_read_35 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 245 'read' 'input_signal_read_35' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_37 : Operation 246 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_34" [framing/framing.cpp:26]   --->   Operation 246 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_37 : Operation 247 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_35" [framing/framing.cpp:26]   --->   Operation 247 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 38 <SV = 37> <Delay = 2.00>
+ST_38 : Operation 248 [1/1] (1.00ns)   --->   "%input_signal_read_36 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 248 'read' 'input_signal_read_36' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_38 : Operation 249 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_35" [framing/framing.cpp:26]   --->   Operation 249 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_38 : Operation 250 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_36" [framing/framing.cpp:26]   --->   Operation 250 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 39 <SV = 38> <Delay = 2.00>
+ST_39 : Operation 251 [1/1] (1.00ns)   --->   "%input_signal_read_37 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 251 'read' 'input_signal_read_37' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_39 : Operation 252 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_36" [framing/framing.cpp:26]   --->   Operation 252 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_39 : Operation 253 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_37" [framing/framing.cpp:26]   --->   Operation 253 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 40 <SV = 39> <Delay = 2.00>
+ST_40 : Operation 254 [1/1] (1.00ns)   --->   "%input_signal_read_38 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 254 'read' 'input_signal_read_38' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_40 : Operation 255 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_37" [framing/framing.cpp:26]   --->   Operation 255 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_40 : Operation 256 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_38" [framing/framing.cpp:26]   --->   Operation 256 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 41 <SV = 40> <Delay = 2.00>
+ST_41 : Operation 257 [1/1] (1.00ns)   --->   "%input_signal_read_39 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 257 'read' 'input_signal_read_39' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_41 : Operation 258 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_38" [framing/framing.cpp:26]   --->   Operation 258 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_41 : Operation 259 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_39" [framing/framing.cpp:26]   --->   Operation 259 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 42 <SV = 41> <Delay = 2.00>
+ST_42 : Operation 260 [1/1] (1.00ns)   --->   "%input_signal_read_40 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 260 'read' 'input_signal_read_40' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_42 : Operation 261 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_39" [framing/framing.cpp:26]   --->   Operation 261 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_42 : Operation 262 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_40" [framing/framing.cpp:26]   --->   Operation 262 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 43 <SV = 42> <Delay = 2.00>
+ST_43 : Operation 263 [1/1] (1.00ns)   --->   "%input_signal_read_41 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 263 'read' 'input_signal_read_41' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_43 : Operation 264 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_40" [framing/framing.cpp:26]   --->   Operation 264 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_43 : Operation 265 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_41" [framing/framing.cpp:26]   --->   Operation 265 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 44 <SV = 43> <Delay = 2.00>
+ST_44 : Operation 266 [1/1] (1.00ns)   --->   "%input_signal_read_42 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 266 'read' 'input_signal_read_42' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_44 : Operation 267 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_41" [framing/framing.cpp:26]   --->   Operation 267 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_44 : Operation 268 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_42" [framing/framing.cpp:26]   --->   Operation 268 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 45 <SV = 44> <Delay = 2.00>
+ST_45 : Operation 269 [1/1] (1.00ns)   --->   "%input_signal_read_43 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 269 'read' 'input_signal_read_43' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_45 : Operation 270 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_42" [framing/framing.cpp:26]   --->   Operation 270 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_45 : Operation 271 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_43" [framing/framing.cpp:26]   --->   Operation 271 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 46 <SV = 45> <Delay = 2.00>
+ST_46 : Operation 272 [1/1] (1.00ns)   --->   "%input_signal_read_44 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 272 'read' 'input_signal_read_44' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_46 : Operation 273 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_43" [framing/framing.cpp:26]   --->   Operation 273 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_46 : Operation 274 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_44" [framing/framing.cpp:26]   --->   Operation 274 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 47 <SV = 46> <Delay = 2.00>
+ST_47 : Operation 275 [1/1] (1.00ns)   --->   "%input_signal_read_45 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 275 'read' 'input_signal_read_45' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_47 : Operation 276 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_44" [framing/framing.cpp:26]   --->   Operation 276 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_47 : Operation 277 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_45" [framing/framing.cpp:26]   --->   Operation 277 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 48 <SV = 47> <Delay = 2.00>
+ST_48 : Operation 278 [1/1] (1.00ns)   --->   "%input_signal_read_46 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 278 'read' 'input_signal_read_46' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_48 : Operation 279 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_45" [framing/framing.cpp:26]   --->   Operation 279 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_48 : Operation 280 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_46" [framing/framing.cpp:26]   --->   Operation 280 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 49 <SV = 48> <Delay = 2.00>
+ST_49 : Operation 281 [1/1] (1.00ns)   --->   "%input_signal_read_47 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 281 'read' 'input_signal_read_47' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_49 : Operation 282 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_46" [framing/framing.cpp:26]   --->   Operation 282 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_49 : Operation 283 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_47" [framing/framing.cpp:26]   --->   Operation 283 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 50 <SV = 49> <Delay = 2.00>
+ST_50 : Operation 284 [1/1] (1.00ns)   --->   "%input_signal_read_48 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 284 'read' 'input_signal_read_48' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_50 : Operation 285 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_47" [framing/framing.cpp:26]   --->   Operation 285 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_50 : Operation 286 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_48" [framing/framing.cpp:26]   --->   Operation 286 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 51 <SV = 50> <Delay = 2.00>
+ST_51 : Operation 287 [1/1] (1.00ns)   --->   "%input_signal_read_49 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 287 'read' 'input_signal_read_49' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_51 : Operation 288 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_48" [framing/framing.cpp:26]   --->   Operation 288 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_51 : Operation 289 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_49" [framing/framing.cpp:26]   --->   Operation 289 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 52 <SV = 51> <Delay = 2.00>
+ST_52 : Operation 290 [1/1] (1.00ns)   --->   "%input_signal_read_50 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 290 'read' 'input_signal_read_50' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_52 : Operation 291 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_49" [framing/framing.cpp:26]   --->   Operation 291 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_52 : Operation 292 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_50" [framing/framing.cpp:26]   --->   Operation 292 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 53 <SV = 52> <Delay = 2.00>
+ST_53 : Operation 293 [1/1] (1.00ns)   --->   "%input_signal_read_51 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 293 'read' 'input_signal_read_51' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_53 : Operation 294 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_50" [framing/framing.cpp:26]   --->   Operation 294 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_53 : Operation 295 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_51" [framing/framing.cpp:26]   --->   Operation 295 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 54 <SV = 53> <Delay = 2.00>
+ST_54 : Operation 296 [1/1] (1.00ns)   --->   "%input_signal_read_52 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 296 'read' 'input_signal_read_52' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_54 : Operation 297 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_51" [framing/framing.cpp:26]   --->   Operation 297 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_54 : Operation 298 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_52" [framing/framing.cpp:26]   --->   Operation 298 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 55 <SV = 54> <Delay = 2.00>
+ST_55 : Operation 299 [1/1] (1.00ns)   --->   "%input_signal_read_53 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 299 'read' 'input_signal_read_53' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_55 : Operation 300 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_52" [framing/framing.cpp:26]   --->   Operation 300 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_55 : Operation 301 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_53" [framing/framing.cpp:26]   --->   Operation 301 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 56 <SV = 55> <Delay = 2.00>
+ST_56 : Operation 302 [1/1] (1.00ns)   --->   "%input_signal_read_54 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 302 'read' 'input_signal_read_54' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_56 : Operation 303 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_53" [framing/framing.cpp:26]   --->   Operation 303 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_56 : Operation 304 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_54" [framing/framing.cpp:26]   --->   Operation 304 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 57 <SV = 56> <Delay = 2.00>
+ST_57 : Operation 305 [1/1] (1.00ns)   --->   "%input_signal_read_55 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 305 'read' 'input_signal_read_55' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_57 : Operation 306 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_54" [framing/framing.cpp:26]   --->   Operation 306 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_57 : Operation 307 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_55" [framing/framing.cpp:26]   --->   Operation 307 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 58 <SV = 57> <Delay = 2.00>
+ST_58 : Operation 308 [1/1] (1.00ns)   --->   "%input_signal_read_56 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 308 'read' 'input_signal_read_56' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_58 : Operation 309 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_55" [framing/framing.cpp:26]   --->   Operation 309 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_58 : Operation 310 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_56" [framing/framing.cpp:26]   --->   Operation 310 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 59 <SV = 58> <Delay = 2.00>
+ST_59 : Operation 311 [1/1] (1.00ns)   --->   "%input_signal_read_57 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 311 'read' 'input_signal_read_57' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_59 : Operation 312 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_56" [framing/framing.cpp:26]   --->   Operation 312 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_59 : Operation 313 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_57" [framing/framing.cpp:26]   --->   Operation 313 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 60 <SV = 59> <Delay = 2.00>
+ST_60 : Operation 314 [1/1] (1.00ns)   --->   "%input_signal_read_58 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 314 'read' 'input_signal_read_58' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_60 : Operation 315 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_57" [framing/framing.cpp:26]   --->   Operation 315 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_60 : Operation 316 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_58" [framing/framing.cpp:26]   --->   Operation 316 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 61 <SV = 60> <Delay = 2.00>
+ST_61 : Operation 317 [1/1] (1.00ns)   --->   "%input_signal_read_59 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 317 'read' 'input_signal_read_59' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_61 : Operation 318 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_58" [framing/framing.cpp:26]   --->   Operation 318 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_61 : Operation 319 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_59" [framing/framing.cpp:26]   --->   Operation 319 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 62 <SV = 61> <Delay = 2.00>
+ST_62 : Operation 320 [1/1] (1.00ns)   --->   "%input_signal_read_60 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 320 'read' 'input_signal_read_60' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_62 : Operation 321 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_59" [framing/framing.cpp:26]   --->   Operation 321 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_62 : Operation 322 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_60" [framing/framing.cpp:26]   --->   Operation 322 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 63 <SV = 62> <Delay = 2.00>
+ST_63 : Operation 323 [1/1] (1.00ns)   --->   "%input_signal_read_61 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 323 'read' 'input_signal_read_61' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_63 : Operation 324 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_60" [framing/framing.cpp:26]   --->   Operation 324 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_63 : Operation 325 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_61" [framing/framing.cpp:26]   --->   Operation 325 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 64 <SV = 63> <Delay = 2.00>
+ST_64 : Operation 326 [1/1] (1.00ns)   --->   "%input_signal_read_62 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 326 'read' 'input_signal_read_62' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_64 : Operation 327 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_61" [framing/framing.cpp:26]   --->   Operation 327 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_64 : Operation 328 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_62" [framing/framing.cpp:26]   --->   Operation 328 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 65 <SV = 64> <Delay = 2.00>
+ST_65 : Operation 329 [1/1] (1.00ns)   --->   "%input_signal_read_63 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 329 'read' 'input_signal_read_63' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_65 : Operation 330 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_62" [framing/framing.cpp:26]   --->   Operation 330 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_65 : Operation 331 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_63" [framing/framing.cpp:26]   --->   Operation 331 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 66 <SV = 65> <Delay = 2.00>
+ST_66 : Operation 332 [1/1] (1.00ns)   --->   "%input_signal_read_64 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 332 'read' 'input_signal_read_64' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_66 : Operation 333 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_63" [framing/framing.cpp:26]   --->   Operation 333 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_66 : Operation 334 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_64" [framing/framing.cpp:26]   --->   Operation 334 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 67 <SV = 66> <Delay = 2.00>
+ST_67 : Operation 335 [1/1] (1.00ns)   --->   "%input_signal_read_65 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 335 'read' 'input_signal_read_65' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_67 : Operation 336 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_64" [framing/framing.cpp:26]   --->   Operation 336 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_67 : Operation 337 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_65" [framing/framing.cpp:26]   --->   Operation 337 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 68 <SV = 67> <Delay = 2.00>
+ST_68 : Operation 338 [1/1] (1.00ns)   --->   "%input_signal_read_66 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 338 'read' 'input_signal_read_66' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_68 : Operation 339 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_65" [framing/framing.cpp:26]   --->   Operation 339 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_68 : Operation 340 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_66" [framing/framing.cpp:26]   --->   Operation 340 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 69 <SV = 68> <Delay = 2.00>
+ST_69 : Operation 341 [1/1] (1.00ns)   --->   "%input_signal_read_67 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 341 'read' 'input_signal_read_67' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_69 : Operation 342 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_66" [framing/framing.cpp:26]   --->   Operation 342 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_69 : Operation 343 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_67" [framing/framing.cpp:26]   --->   Operation 343 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 70 <SV = 69> <Delay = 2.00>
+ST_70 : Operation 344 [1/1] (1.00ns)   --->   "%input_signal_read_68 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 344 'read' 'input_signal_read_68' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_70 : Operation 345 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_67" [framing/framing.cpp:26]   --->   Operation 345 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_70 : Operation 346 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_68" [framing/framing.cpp:26]   --->   Operation 346 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 71 <SV = 70> <Delay = 2.00>
+ST_71 : Operation 347 [1/1] (1.00ns)   --->   "%input_signal_read_69 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 347 'read' 'input_signal_read_69' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_71 : Operation 348 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_68" [framing/framing.cpp:26]   --->   Operation 348 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_71 : Operation 349 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_69" [framing/framing.cpp:26]   --->   Operation 349 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 72 <SV = 71> <Delay = 2.00>
+ST_72 : Operation 350 [1/1] (1.00ns)   --->   "%input_signal_read_70 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 350 'read' 'input_signal_read_70' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_72 : Operation 351 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_69" [framing/framing.cpp:26]   --->   Operation 351 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_72 : Operation 352 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_70" [framing/framing.cpp:26]   --->   Operation 352 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 73 <SV = 72> <Delay = 2.00>
+ST_73 : Operation 353 [1/1] (1.00ns)   --->   "%input_signal_read_71 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 353 'read' 'input_signal_read_71' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_73 : Operation 354 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_70" [framing/framing.cpp:26]   --->   Operation 354 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_73 : Operation 355 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_71" [framing/framing.cpp:26]   --->   Operation 355 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 74 <SV = 73> <Delay = 2.00>
+ST_74 : Operation 356 [1/1] (1.00ns)   --->   "%input_signal_read_72 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 356 'read' 'input_signal_read_72' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_74 : Operation 357 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_71" [framing/framing.cpp:26]   --->   Operation 357 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_74 : Operation 358 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_72" [framing/framing.cpp:26]   --->   Operation 358 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 75 <SV = 74> <Delay = 2.00>
+ST_75 : Operation 359 [1/1] (1.00ns)   --->   "%input_signal_read_73 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 359 'read' 'input_signal_read_73' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_75 : Operation 360 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_72" [framing/framing.cpp:26]   --->   Operation 360 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_75 : Operation 361 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_73" [framing/framing.cpp:26]   --->   Operation 361 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 76 <SV = 75> <Delay = 2.00>
+ST_76 : Operation 362 [1/1] (1.00ns)   --->   "%input_signal_read_74 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 362 'read' 'input_signal_read_74' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_76 : Operation 363 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_73" [framing/framing.cpp:26]   --->   Operation 363 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_76 : Operation 364 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_74" [framing/framing.cpp:26]   --->   Operation 364 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 77 <SV = 76> <Delay = 2.00>
+ST_77 : Operation 365 [1/1] (1.00ns)   --->   "%input_signal_read_75 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 365 'read' 'input_signal_read_75' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_77 : Operation 366 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_74" [framing/framing.cpp:26]   --->   Operation 366 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_77 : Operation 367 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_75" [framing/framing.cpp:26]   --->   Operation 367 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 78 <SV = 77> <Delay = 2.00>
+ST_78 : Operation 368 [1/1] (1.00ns)   --->   "%input_signal_read_76 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 368 'read' 'input_signal_read_76' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_78 : Operation 369 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_75" [framing/framing.cpp:26]   --->   Operation 369 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_78 : Operation 370 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_76" [framing/framing.cpp:26]   --->   Operation 370 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 79 <SV = 78> <Delay = 2.00>
+ST_79 : Operation 371 [1/1] (1.00ns)   --->   "%input_signal_read_77 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 371 'read' 'input_signal_read_77' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_79 : Operation 372 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_76" [framing/framing.cpp:26]   --->   Operation 372 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_79 : Operation 373 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_77" [framing/framing.cpp:26]   --->   Operation 373 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 80 <SV = 79> <Delay = 2.00>
+ST_80 : Operation 374 [1/1] (1.00ns)   --->   "%input_signal_read_78 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 374 'read' 'input_signal_read_78' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_80 : Operation 375 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_77" [framing/framing.cpp:26]   --->   Operation 375 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_80 : Operation 376 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_78" [framing/framing.cpp:26]   --->   Operation 376 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 81 <SV = 80> <Delay = 2.00>
+ST_81 : Operation 377 [1/1] (1.00ns)   --->   "%input_signal_read_79 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 377 'read' 'input_signal_read_79' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_81 : Operation 378 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_78" [framing/framing.cpp:26]   --->   Operation 378 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_81 : Operation 379 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_79" [framing/framing.cpp:26]   --->   Operation 379 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 82 <SV = 81> <Delay = 2.00>
+ST_82 : Operation 380 [1/1] (1.00ns)   --->   "%input_signal_read_80 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 380 'read' 'input_signal_read_80' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_82 : Operation 381 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_79" [framing/framing.cpp:26]   --->   Operation 381 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_82 : Operation 382 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_80" [framing/framing.cpp:26]   --->   Operation 382 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 83 <SV = 82> <Delay = 2.00>
+ST_83 : Operation 383 [1/1] (1.00ns)   --->   "%input_signal_read_81 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 383 'read' 'input_signal_read_81' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_83 : Operation 384 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_80" [framing/framing.cpp:26]   --->   Operation 384 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_83 : Operation 385 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_81" [framing/framing.cpp:26]   --->   Operation 385 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 84 <SV = 83> <Delay = 2.00>
+ST_84 : Operation 386 [1/1] (1.00ns)   --->   "%input_signal_read_82 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 386 'read' 'input_signal_read_82' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_84 : Operation 387 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_81" [framing/framing.cpp:26]   --->   Operation 387 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_84 : Operation 388 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_82" [framing/framing.cpp:26]   --->   Operation 388 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 85 <SV = 84> <Delay = 2.00>
+ST_85 : Operation 389 [1/1] (1.00ns)   --->   "%input_signal_read_83 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 389 'read' 'input_signal_read_83' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_85 : Operation 390 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_82" [framing/framing.cpp:26]   --->   Operation 390 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_85 : Operation 391 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_83" [framing/framing.cpp:26]   --->   Operation 391 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 86 <SV = 85> <Delay = 2.00>
+ST_86 : Operation 392 [1/1] (1.00ns)   --->   "%input_signal_read_84 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 392 'read' 'input_signal_read_84' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_86 : Operation 393 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_83" [framing/framing.cpp:26]   --->   Operation 393 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_86 : Operation 394 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_84" [framing/framing.cpp:26]   --->   Operation 394 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 87 <SV = 86> <Delay = 2.00>
+ST_87 : Operation 395 [1/1] (1.00ns)   --->   "%input_signal_read_85 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 395 'read' 'input_signal_read_85' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_87 : Operation 396 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_84" [framing/framing.cpp:26]   --->   Operation 396 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_87 : Operation 397 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_85" [framing/framing.cpp:26]   --->   Operation 397 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 88 <SV = 87> <Delay = 2.00>
+ST_88 : Operation 398 [1/1] (1.00ns)   --->   "%input_signal_read_86 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 398 'read' 'input_signal_read_86' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_88 : Operation 399 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_85" [framing/framing.cpp:26]   --->   Operation 399 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_88 : Operation 400 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_86" [framing/framing.cpp:26]   --->   Operation 400 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 89 <SV = 88> <Delay = 2.00>
+ST_89 : Operation 401 [1/1] (1.00ns)   --->   "%input_signal_read_87 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 401 'read' 'input_signal_read_87' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_89 : Operation 402 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_86" [framing/framing.cpp:26]   --->   Operation 402 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_89 : Operation 403 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_87" [framing/framing.cpp:26]   --->   Operation 403 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 90 <SV = 89> <Delay = 2.00>
+ST_90 : Operation 404 [1/1] (1.00ns)   --->   "%input_signal_read_88 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 404 'read' 'input_signal_read_88' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_90 : Operation 405 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_87" [framing/framing.cpp:26]   --->   Operation 405 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_90 : Operation 406 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_88" [framing/framing.cpp:26]   --->   Operation 406 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 91 <SV = 90> <Delay = 2.00>
+ST_91 : Operation 407 [1/1] (1.00ns)   --->   "%input_signal_read_89 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 407 'read' 'input_signal_read_89' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_91 : Operation 408 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_88" [framing/framing.cpp:26]   --->   Operation 408 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_91 : Operation 409 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_89" [framing/framing.cpp:26]   --->   Operation 409 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 92 <SV = 91> <Delay = 2.00>
+ST_92 : Operation 410 [1/1] (1.00ns)   --->   "%input_signal_read_90 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 410 'read' 'input_signal_read_90' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_92 : Operation 411 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_89" [framing/framing.cpp:26]   --->   Operation 411 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_92 : Operation 412 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_90" [framing/framing.cpp:26]   --->   Operation 412 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 93 <SV = 92> <Delay = 2.00>
+ST_93 : Operation 413 [1/1] (1.00ns)   --->   "%input_signal_read_91 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 413 'read' 'input_signal_read_91' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_93 : Operation 414 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_90" [framing/framing.cpp:26]   --->   Operation 414 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_93 : Operation 415 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_91" [framing/framing.cpp:26]   --->   Operation 415 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 94 <SV = 93> <Delay = 2.00>
+ST_94 : Operation 416 [1/1] (1.00ns)   --->   "%input_signal_read_92 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 416 'read' 'input_signal_read_92' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_94 : Operation 417 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_91" [framing/framing.cpp:26]   --->   Operation 417 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_94 : Operation 418 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_92" [framing/framing.cpp:26]   --->   Operation 418 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 95 <SV = 94> <Delay = 2.00>
+ST_95 : Operation 419 [1/1] (1.00ns)   --->   "%input_signal_read_93 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 419 'read' 'input_signal_read_93' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_95 : Operation 420 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_92" [framing/framing.cpp:26]   --->   Operation 420 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_95 : Operation 421 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_93" [framing/framing.cpp:26]   --->   Operation 421 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 96 <SV = 95> <Delay = 2.00>
+ST_96 : Operation 422 [1/1] (1.00ns)   --->   "%input_signal_read_94 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 422 'read' 'input_signal_read_94' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_96 : Operation 423 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_93" [framing/framing.cpp:26]   --->   Operation 423 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_96 : Operation 424 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_94" [framing/framing.cpp:26]   --->   Operation 424 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 97 <SV = 96> <Delay = 2.00>
+ST_97 : Operation 425 [1/1] (1.00ns)   --->   "%input_signal_read_95 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 425 'read' 'input_signal_read_95' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_97 : Operation 426 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_94" [framing/framing.cpp:26]   --->   Operation 426 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_97 : Operation 427 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_95" [framing/framing.cpp:26]   --->   Operation 427 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 98 <SV = 97> <Delay = 2.00>
+ST_98 : Operation 428 [1/1] (1.00ns)   --->   "%input_signal_read_96 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 428 'read' 'input_signal_read_96' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_98 : Operation 429 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_95" [framing/framing.cpp:26]   --->   Operation 429 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_98 : Operation 430 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_96" [framing/framing.cpp:26]   --->   Operation 430 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 99 <SV = 98> <Delay = 2.00>
+ST_99 : Operation 431 [1/1] (1.00ns)   --->   "%input_signal_read_97 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 431 'read' 'input_signal_read_97' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_99 : Operation 432 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_96" [framing/framing.cpp:26]   --->   Operation 432 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_99 : Operation 433 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_97" [framing/framing.cpp:26]   --->   Operation 433 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 100 <SV = 99> <Delay = 2.00>
+ST_100 : Operation 434 [1/1] (1.00ns)   --->   "%input_signal_read_98 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 434 'read' 'input_signal_read_98' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_100 : Operation 435 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_97" [framing/framing.cpp:26]   --->   Operation 435 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_100 : Operation 436 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_98" [framing/framing.cpp:26]   --->   Operation 436 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 101 <SV = 100> <Delay = 2.00>
+ST_101 : Operation 437 [1/1] (1.00ns)   --->   "%input_signal_read_99 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 437 'read' 'input_signal_read_99' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_101 : Operation 438 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_98" [framing/framing.cpp:26]   --->   Operation 438 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_101 : Operation 439 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_99" [framing/framing.cpp:26]   --->   Operation 439 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 102 <SV = 101> <Delay = 2.00>
+ST_102 : Operation 440 [1/1] (1.00ns)   --->   "%input_signal_read_100 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 440 'read' 'input_signal_read_100' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_102 : Operation 441 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_99" [framing/framing.cpp:26]   --->   Operation 441 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_102 : Operation 442 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_100" [framing/framing.cpp:26]   --->   Operation 442 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 103 <SV = 102> <Delay = 2.00>
+ST_103 : Operation 443 [1/1] (1.00ns)   --->   "%input_signal_read_101 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 443 'read' 'input_signal_read_101' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_103 : Operation 444 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_100" [framing/framing.cpp:26]   --->   Operation 444 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_103 : Operation 445 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_101" [framing/framing.cpp:26]   --->   Operation 445 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 104 <SV = 103> <Delay = 2.00>
+ST_104 : Operation 446 [1/1] (1.00ns)   --->   "%input_signal_read_102 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 446 'read' 'input_signal_read_102' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_104 : Operation 447 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_101" [framing/framing.cpp:26]   --->   Operation 447 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_104 : Operation 448 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_102" [framing/framing.cpp:26]   --->   Operation 448 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 105 <SV = 104> <Delay = 2.00>
+ST_105 : Operation 449 [1/1] (1.00ns)   --->   "%input_signal_read_103 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 449 'read' 'input_signal_read_103' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_105 : Operation 450 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_102" [framing/framing.cpp:26]   --->   Operation 450 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_105 : Operation 451 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_103" [framing/framing.cpp:26]   --->   Operation 451 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 106 <SV = 105> <Delay = 2.00>
+ST_106 : Operation 452 [1/1] (1.00ns)   --->   "%input_signal_read_104 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 452 'read' 'input_signal_read_104' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_106 : Operation 453 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_103" [framing/framing.cpp:26]   --->   Operation 453 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_106 : Operation 454 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_104" [framing/framing.cpp:26]   --->   Operation 454 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 107 <SV = 106> <Delay = 2.00>
+ST_107 : Operation 455 [1/1] (1.00ns)   --->   "%input_signal_read_105 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 455 'read' 'input_signal_read_105' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_107 : Operation 456 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_104" [framing/framing.cpp:26]   --->   Operation 456 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_107 : Operation 457 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_105" [framing/framing.cpp:26]   --->   Operation 457 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 108 <SV = 107> <Delay = 2.00>
+ST_108 : Operation 458 [1/1] (1.00ns)   --->   "%input_signal_read_106 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 458 'read' 'input_signal_read_106' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_108 : Operation 459 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_105" [framing/framing.cpp:26]   --->   Operation 459 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_108 : Operation 460 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_106" [framing/framing.cpp:26]   --->   Operation 460 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 109 <SV = 108> <Delay = 2.00>
+ST_109 : Operation 461 [1/1] (1.00ns)   --->   "%input_signal_read_107 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 461 'read' 'input_signal_read_107' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_109 : Operation 462 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_106" [framing/framing.cpp:26]   --->   Operation 462 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_109 : Operation 463 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_107" [framing/framing.cpp:26]   --->   Operation 463 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 110 <SV = 109> <Delay = 2.00>
+ST_110 : Operation 464 [1/1] (1.00ns)   --->   "%input_signal_read_108 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 464 'read' 'input_signal_read_108' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_110 : Operation 465 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_107" [framing/framing.cpp:26]   --->   Operation 465 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_110 : Operation 466 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_108" [framing/framing.cpp:26]   --->   Operation 466 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 111 <SV = 110> <Delay = 2.00>
+ST_111 : Operation 467 [1/1] (1.00ns)   --->   "%input_signal_read_109 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 467 'read' 'input_signal_read_109' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_111 : Operation 468 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_108" [framing/framing.cpp:26]   --->   Operation 468 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_111 : Operation 469 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_109" [framing/framing.cpp:26]   --->   Operation 469 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 112 <SV = 111> <Delay = 2.00>
+ST_112 : Operation 470 [1/1] (1.00ns)   --->   "%input_signal_read_110 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 470 'read' 'input_signal_read_110' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_112 : Operation 471 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_109" [framing/framing.cpp:26]   --->   Operation 471 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_112 : Operation 472 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_110" [framing/framing.cpp:26]   --->   Operation 472 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 113 <SV = 112> <Delay = 2.00>
+ST_113 : Operation 473 [1/1] (1.00ns)   --->   "%input_signal_read_111 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 473 'read' 'input_signal_read_111' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_113 : Operation 474 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_110" [framing/framing.cpp:26]   --->   Operation 474 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_113 : Operation 475 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_111" [framing/framing.cpp:26]   --->   Operation 475 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 114 <SV = 113> <Delay = 2.00>
+ST_114 : Operation 476 [1/1] (1.00ns)   --->   "%input_signal_read_112 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 476 'read' 'input_signal_read_112' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_114 : Operation 477 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_111" [framing/framing.cpp:26]   --->   Operation 477 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_114 : Operation 478 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_112" [framing/framing.cpp:26]   --->   Operation 478 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 115 <SV = 114> <Delay = 2.00>
+ST_115 : Operation 479 [1/1] (1.00ns)   --->   "%input_signal_read_113 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 479 'read' 'input_signal_read_113' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_115 : Operation 480 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_112" [framing/framing.cpp:26]   --->   Operation 480 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_115 : Operation 481 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_113" [framing/framing.cpp:26]   --->   Operation 481 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 116 <SV = 115> <Delay = 2.00>
+ST_116 : Operation 482 [1/1] (1.00ns)   --->   "%input_signal_read_114 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 482 'read' 'input_signal_read_114' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_116 : Operation 483 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_113" [framing/framing.cpp:26]   --->   Operation 483 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_116 : Operation 484 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_114" [framing/framing.cpp:26]   --->   Operation 484 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 117 <SV = 116> <Delay = 2.00>
+ST_117 : Operation 485 [1/1] (1.00ns)   --->   "%input_signal_read_115 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 485 'read' 'input_signal_read_115' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_117 : Operation 486 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_114" [framing/framing.cpp:26]   --->   Operation 486 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_117 : Operation 487 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_115" [framing/framing.cpp:26]   --->   Operation 487 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 118 <SV = 117> <Delay = 2.00>
+ST_118 : Operation 488 [1/1] (1.00ns)   --->   "%input_signal_read_116 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 488 'read' 'input_signal_read_116' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_118 : Operation 489 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_115" [framing/framing.cpp:26]   --->   Operation 489 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_118 : Operation 490 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_116" [framing/framing.cpp:26]   --->   Operation 490 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 119 <SV = 118> <Delay = 2.00>
+ST_119 : Operation 491 [1/1] (1.00ns)   --->   "%input_signal_read_117 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 491 'read' 'input_signal_read_117' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_119 : Operation 492 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_116" [framing/framing.cpp:26]   --->   Operation 492 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_119 : Operation 493 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_117" [framing/framing.cpp:26]   --->   Operation 493 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 120 <SV = 119> <Delay = 2.00>
+ST_120 : Operation 494 [1/1] (1.00ns)   --->   "%input_signal_read_118 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 494 'read' 'input_signal_read_118' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_120 : Operation 495 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_117" [framing/framing.cpp:26]   --->   Operation 495 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_120 : Operation 496 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_118" [framing/framing.cpp:26]   --->   Operation 496 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 121 <SV = 120> <Delay = 2.00>
+ST_121 : Operation 497 [1/1] (1.00ns)   --->   "%input_signal_read_119 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 497 'read' 'input_signal_read_119' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_121 : Operation 498 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_118" [framing/framing.cpp:26]   --->   Operation 498 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_121 : Operation 499 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_119" [framing/framing.cpp:26]   --->   Operation 499 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 122 <SV = 121> <Delay = 2.00>
+ST_122 : Operation 500 [1/1] (1.00ns)   --->   "%input_signal_read_120 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 500 'read' 'input_signal_read_120' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_122 : Operation 501 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_119" [framing/framing.cpp:26]   --->   Operation 501 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_122 : Operation 502 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_120" [framing/framing.cpp:26]   --->   Operation 502 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 123 <SV = 122> <Delay = 2.00>
+ST_123 : Operation 503 [1/1] (1.00ns)   --->   "%input_signal_read_121 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 503 'read' 'input_signal_read_121' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_123 : Operation 504 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_120" [framing/framing.cpp:26]   --->   Operation 504 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_123 : Operation 505 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_121" [framing/framing.cpp:26]   --->   Operation 505 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 124 <SV = 123> <Delay = 2.00>
+ST_124 : Operation 506 [1/1] (1.00ns)   --->   "%input_signal_read_122 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 506 'read' 'input_signal_read_122' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_124 : Operation 507 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_121" [framing/framing.cpp:26]   --->   Operation 507 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_124 : Operation 508 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_122" [framing/framing.cpp:26]   --->   Operation 508 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 125 <SV = 124> <Delay = 2.00>
+ST_125 : Operation 509 [1/1] (1.00ns)   --->   "%input_signal_read_123 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 509 'read' 'input_signal_read_123' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_125 : Operation 510 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_122" [framing/framing.cpp:26]   --->   Operation 510 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_125 : Operation 511 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_123" [framing/framing.cpp:26]   --->   Operation 511 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 126 <SV = 125> <Delay = 2.00>
+ST_126 : Operation 512 [1/1] (1.00ns)   --->   "%input_signal_read_124 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 512 'read' 'input_signal_read_124' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_126 : Operation 513 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_123" [framing/framing.cpp:26]   --->   Operation 513 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_126 : Operation 514 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_124" [framing/framing.cpp:26]   --->   Operation 514 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 127 <SV = 126> <Delay = 2.00>
+ST_127 : Operation 515 [1/1] (1.00ns)   --->   "%input_signal_read_125 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 515 'read' 'input_signal_read_125' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_127 : Operation 516 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_124" [framing/framing.cpp:26]   --->   Operation 516 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_127 : Operation 517 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_125" [framing/framing.cpp:26]   --->   Operation 517 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 128 <SV = 127> <Delay = 2.00>
+ST_128 : Operation 518 [1/1] (1.00ns)   --->   "%input_signal_read_126 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 518 'read' 'input_signal_read_126' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_128 : Operation 519 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_125" [framing/framing.cpp:26]   --->   Operation 519 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_128 : Operation 520 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_126" [framing/framing.cpp:26]   --->   Operation 520 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 129 <SV = 128> <Delay = 2.00>
+ST_129 : Operation 521 [1/1] (1.00ns)   --->   "%input_signal_read_127 = read i32 @_ssdm_op_Read.axis.volatile.i32P128A, i32 %input_signal" [framing/framing.cpp:23]   --->   Operation 521 'read' 'input_signal_read_127' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_129 : Operation 522 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_126" [framing/framing.cpp:26]   --->   Operation 522 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_129 : Operation 523 [2/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_127" [framing/framing.cpp:26]   --->   Operation 523 'write' 'write_ln26' <Predicate = true> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 130 <SV = 129> <Delay = 1.00>
+ST_130 : Operation 524 [1/1] (0.00ns)   --->   "%specloopname_ln21 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [framing/framing.cpp:21]   --->   Operation 524 'specloopname' 'specloopname_ln21' <Predicate = (tmp)> <Delay = 0.00>
+ST_130 : Operation 525 [1/2] (1.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.axis.volatile.i32P128A, i32 %output_frames, i32 %input_signal_read_127" [framing/framing.cpp:26]   --->   Operation 525 'write' 'write_ln26' <Predicate = (tmp)> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_130 : Operation 526 [1/1] (1.00ns)   --->   "%tmp_1 = nbreadreq i1 @_ssdm_op_NbReadReq.axis.i32P128A, i32 %input_signal, i32 1" [framing/framing.cpp:21]   --->   Operation 526 'nbreadreq' 'tmp_1' <Predicate = (tmp)> <Delay = 1.00> <CoreInst = "axis">   --->   Core 115 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_130 : Operation 527 [1/1] (0.00ns)   --->   "%br_ln21 = br i1 %tmp_1, void %while.end.loopexit, void %VITIS_LOOP_22_2" [framing/framing.cpp:21]   --->   Operation 527 'br' 'br_ln21' <Predicate = (tmp)> <Delay = 0.00>
+ST_130 : Operation 528 [1/1] (0.00ns)   --->   "%br_ln0 = br void %while.end"   --->   Operation 528 'br' 'br_ln0' <Predicate = (tmp & !tmp_1)> <Delay = 0.00>
+ST_130 : Operation 529 [1/1] (0.00ns)   --->   "%ret_ln29 = ret" [framing/framing.cpp:29]   --->   Operation 529 'ret' 'ret_ln29' <Predicate = (!tmp_1) | (!tmp)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.000ns
+The critical path consists of the following:
+	axis request operation ('tmp', framing/framing.cpp:21) on port 'input_signal' (framing/framing.cpp:21) [10]  (1.000 ns)
+
+ <State 2>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [16]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [144]  (1.000 ns)
+
+ <State 3>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_1', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [17]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [145]  (1.000 ns)
+
+ <State 4>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_2', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [18]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [146]  (1.000 ns)
+
+ <State 5>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_3', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [19]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [147]  (1.000 ns)
+
+ <State 6>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_4', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [20]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [148]  (1.000 ns)
+
+ <State 7>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_5', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [21]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [149]  (1.000 ns)
+
+ <State 8>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_6', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [22]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [150]  (1.000 ns)
+
+ <State 9>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_7', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [23]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [151]  (1.000 ns)
+
+ <State 10>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_8', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [24]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [152]  (1.000 ns)
+
+ <State 11>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_9', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [25]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [153]  (1.000 ns)
+
+ <State 12>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_10', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [26]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [154]  (1.000 ns)
+
+ <State 13>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_11', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [27]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [155]  (1.000 ns)
+
+ <State 14>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_12', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [28]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [156]  (1.000 ns)
+
+ <State 15>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_13', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [29]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [157]  (1.000 ns)
+
+ <State 16>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_14', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [30]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [158]  (1.000 ns)
+
+ <State 17>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_15', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [31]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [159]  (1.000 ns)
+
+ <State 18>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_16', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [32]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [160]  (1.000 ns)
+
+ <State 19>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_17', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [33]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [161]  (1.000 ns)
+
+ <State 20>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_18', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [34]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [162]  (1.000 ns)
+
+ <State 21>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_19', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [35]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [163]  (1.000 ns)
+
+ <State 22>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_20', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [36]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [164]  (1.000 ns)
+
+ <State 23>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_21', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [37]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [165]  (1.000 ns)
+
+ <State 24>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_22', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [38]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [166]  (1.000 ns)
+
+ <State 25>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_23', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [39]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [167]  (1.000 ns)
+
+ <State 26>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_24', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [40]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [168]  (1.000 ns)
+
+ <State 27>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_25', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [41]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [169]  (1.000 ns)
+
+ <State 28>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_26', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [42]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [170]  (1.000 ns)
+
+ <State 29>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_27', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [43]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [171]  (1.000 ns)
+
+ <State 30>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_28', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [44]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [172]  (1.000 ns)
+
+ <State 31>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_29', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [45]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [173]  (1.000 ns)
+
+ <State 32>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_30', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [46]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [174]  (1.000 ns)
+
+ <State 33>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_31', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [47]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [175]  (1.000 ns)
+
+ <State 34>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_32', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [48]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [176]  (1.000 ns)
+
+ <State 35>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_33', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [49]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [177]  (1.000 ns)
+
+ <State 36>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_34', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [50]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [178]  (1.000 ns)
+
+ <State 37>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_35', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [51]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [179]  (1.000 ns)
+
+ <State 38>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_36', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [52]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [180]  (1.000 ns)
+
+ <State 39>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_37', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [53]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [181]  (1.000 ns)
+
+ <State 40>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_38', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [54]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [182]  (1.000 ns)
+
+ <State 41>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_39', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [55]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [183]  (1.000 ns)
+
+ <State 42>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_40', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [56]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [184]  (1.000 ns)
+
+ <State 43>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_41', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [57]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [185]  (1.000 ns)
+
+ <State 44>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_42', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [58]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [186]  (1.000 ns)
+
+ <State 45>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_43', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [59]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [187]  (1.000 ns)
+
+ <State 46>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_44', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [60]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [188]  (1.000 ns)
+
+ <State 47>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_45', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [61]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [189]  (1.000 ns)
+
+ <State 48>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_46', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [62]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [190]  (1.000 ns)
+
+ <State 49>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_47', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [63]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [191]  (1.000 ns)
+
+ <State 50>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_48', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [64]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [192]  (1.000 ns)
+
+ <State 51>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_49', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [65]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [193]  (1.000 ns)
+
+ <State 52>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_50', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [66]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [194]  (1.000 ns)
+
+ <State 53>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_51', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [67]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [195]  (1.000 ns)
+
+ <State 54>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_52', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [68]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [196]  (1.000 ns)
+
+ <State 55>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_53', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [69]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [197]  (1.000 ns)
+
+ <State 56>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_54', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [70]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [198]  (1.000 ns)
+
+ <State 57>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_55', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [71]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [199]  (1.000 ns)
+
+ <State 58>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_56', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [72]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [200]  (1.000 ns)
+
+ <State 59>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_57', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [73]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [201]  (1.000 ns)
+
+ <State 60>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_58', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [74]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [202]  (1.000 ns)
+
+ <State 61>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_59', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [75]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [203]  (1.000 ns)
+
+ <State 62>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_60', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [76]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [204]  (1.000 ns)
+
+ <State 63>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_61', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [77]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [205]  (1.000 ns)
+
+ <State 64>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_62', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [78]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [206]  (1.000 ns)
+
+ <State 65>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_63', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [79]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [207]  (1.000 ns)
+
+ <State 66>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_64', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [80]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [208]  (1.000 ns)
+
+ <State 67>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_65', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [81]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [209]  (1.000 ns)
+
+ <State 68>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_66', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [82]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [210]  (1.000 ns)
+
+ <State 69>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_67', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [83]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [211]  (1.000 ns)
+
+ <State 70>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_68', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [84]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [212]  (1.000 ns)
+
+ <State 71>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_69', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [85]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [213]  (1.000 ns)
+
+ <State 72>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_70', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [86]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [214]  (1.000 ns)
+
+ <State 73>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_71', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [87]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [215]  (1.000 ns)
+
+ <State 74>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_72', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [88]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [216]  (1.000 ns)
+
+ <State 75>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_73', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [89]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [217]  (1.000 ns)
+
+ <State 76>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_74', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [90]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [218]  (1.000 ns)
+
+ <State 77>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_75', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [91]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [219]  (1.000 ns)
+
+ <State 78>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_76', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [92]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [220]  (1.000 ns)
+
+ <State 79>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_77', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [93]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [221]  (1.000 ns)
+
+ <State 80>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_78', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [94]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [222]  (1.000 ns)
+
+ <State 81>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_79', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [95]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [223]  (1.000 ns)
+
+ <State 82>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_80', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [96]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [224]  (1.000 ns)
+
+ <State 83>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_81', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [97]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [225]  (1.000 ns)
+
+ <State 84>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_82', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [98]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [226]  (1.000 ns)
+
+ <State 85>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_83', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [99]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [227]  (1.000 ns)
+
+ <State 86>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_84', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [100]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [228]  (1.000 ns)
+
+ <State 87>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_85', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [101]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [229]  (1.000 ns)
+
+ <State 88>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_86', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [102]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [230]  (1.000 ns)
+
+ <State 89>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_87', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [103]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [231]  (1.000 ns)
+
+ <State 90>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_88', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [104]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [232]  (1.000 ns)
+
+ <State 91>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_89', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [105]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [233]  (1.000 ns)
+
+ <State 92>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_90', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [106]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [234]  (1.000 ns)
+
+ <State 93>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_91', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [107]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [235]  (1.000 ns)
+
+ <State 94>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_92', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [108]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [236]  (1.000 ns)
+
+ <State 95>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_93', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [109]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [237]  (1.000 ns)
+
+ <State 96>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_94', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [110]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [238]  (1.000 ns)
+
+ <State 97>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_95', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [111]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [239]  (1.000 ns)
+
+ <State 98>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_96', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [112]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [240]  (1.000 ns)
+
+ <State 99>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_97', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [113]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [241]  (1.000 ns)
+
+ <State 100>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_98', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [114]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [242]  (1.000 ns)
+
+ <State 101>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_99', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [115]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [243]  (1.000 ns)
+
+ <State 102>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_100', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [116]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [244]  (1.000 ns)
+
+ <State 103>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_101', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [117]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [245]  (1.000 ns)
+
+ <State 104>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_102', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [118]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [246]  (1.000 ns)
+
+ <State 105>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_103', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [119]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [247]  (1.000 ns)
+
+ <State 106>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_104', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [120]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [248]  (1.000 ns)
+
+ <State 107>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_105', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [121]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [249]  (1.000 ns)
+
+ <State 108>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_106', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [122]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [250]  (1.000 ns)
+
+ <State 109>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_107', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [123]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [251]  (1.000 ns)
+
+ <State 110>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_108', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [124]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [252]  (1.000 ns)
+
+ <State 111>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_109', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [125]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [253]  (1.000 ns)
+
+ <State 112>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_110', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [126]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [254]  (1.000 ns)
+
+ <State 113>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_111', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [127]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [255]  (1.000 ns)
+
+ <State 114>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_112', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [128]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [256]  (1.000 ns)
+
+ <State 115>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_113', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [129]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [257]  (1.000 ns)
+
+ <State 116>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_114', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [130]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [258]  (1.000 ns)
+
+ <State 117>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_115', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [131]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [259]  (1.000 ns)
+
+ <State 118>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_116', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [132]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [260]  (1.000 ns)
+
+ <State 119>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_117', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [133]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [261]  (1.000 ns)
+
+ <State 120>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_118', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [134]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [262]  (1.000 ns)
+
+ <State 121>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_119', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [135]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [263]  (1.000 ns)
+
+ <State 122>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_120', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [136]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [264]  (1.000 ns)
+
+ <State 123>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_121', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [137]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [265]  (1.000 ns)
+
+ <State 124>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_122', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [138]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [266]  (1.000 ns)
+
+ <State 125>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_123', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [139]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [267]  (1.000 ns)
+
+ <State 126>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_124', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [140]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [268]  (1.000 ns)
+
+ <State 127>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_125', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [141]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [269]  (1.000 ns)
+
+ <State 128>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_126', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [142]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [270]  (1.000 ns)
+
+ <State 129>: 2.000ns
+The critical path consists of the following:
+	axis read operation ('input_signal_read_127', framing/framing.cpp:23) on port 'input_signal' (framing/framing.cpp:23) [143]  (1.000 ns)
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [271]  (1.000 ns)
+
+ <State 130>: 1.000ns
+The critical path consists of the following:
+	axis write operation ('write_ln26', framing/framing.cpp:26) on port 'output_frames' (framing/framing.cpp:26) [271]  (1.000 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+	State 116
+	State 117
+	State 118
+	State 119
+	State 120
+	State 121
+	State 122
+	State 123
+	State 124
+	State 125
+	State 126
+	State 127
+	State 128
+	State 129
+	State 130
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
